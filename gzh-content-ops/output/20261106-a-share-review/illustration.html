@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1600px; }
+  .wrap { width:1080px; height:1600px; background:#F4F1EA; padding:54px 60px;
+          font-family:"Noto Sans SC","Microsoft YaHei",sans-serif; }
+  .h { color:#0E2A47; font-size:58px; font-weight:800; letter-spacing:1px; line-height:1.25; }
+  .h span { color:#C8A24B; }
+  .d { color:#5b6b7a; font-size:30px; margin-top:18px; }
+  .col { margin-top:46px; }
+  .row { display:flex; align-items:center; margin:26px 0; }
+  .name { width:250px; color:#0E2A47; font-size:50px; font-weight:600; text-align:right; padding-right:28px; }
+  .track { flex:1; height:60px; background:#e7e0d2; border-radius:10px; position:relative; }
+  .fill { height:60px; border-radius:10px; position:absolute; left:0; top:0; }
+  .val { width:160px; color:#0E2A47; font-size:54px; font-weight:800; padding-left:26px; }
+  .up .fill { background:#E0533D; }
+  .dn .fill { background:#2F8F5B; }
+  .up .val { color:#E0533D; }
+  .dn .val { color:#2F8F5B; }
+  .legend { margin-top:48px; display:flex; gap:56px; color:#5b6b7a; font-size:32px; }
+  .dot { display:inline-block; width:26px; height:26px; border-radius:6px; vertical-align:middle; margin-right:14px;}
+  .legup { background:#E0533D; }
+  .legdn { background:#2F8F5B; }
+  .note { margin-top:38px; color:#8a93a0; font-size:34px; line-height:1.6; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="h">今日板块：<span>农业电力顶着</span>，科技线集体回撤</div>
+    <div class="d">2026-11-06 收盘，东财行业 / 概念口径（红涨绿跌）</div>
+
+    <div class="col">
+      <div class="row up"><div class="name">视频媒体</div><div class="track"><div class="fill" style="width:440px"></div></div><div class="val">+6.25%</div></div>
+      <div class="row up"><div class="name">种子</div><div class="track"><div class="fill" style="width:327px"></div></div><div class="val">+4.64%</div></div>
+      <div class="row up"><div class="name">电信运营商</div><div class="track"><div class="fill" style="width:202px"></div></div><div class="val">+2.87%</div></div>
+      <div class="row up"><div class="name">种植业</div><div class="track"><div class="fill" style="width:191px"></div></div><div class="val">+2.72%</div></div>
+
+      <div class="row dn"><div class="name">印制电路板</div><div class="track"><div class="fill" style="width:412px"></div></div><div class="val">-5.86%</div></div>
+      <div class="row dn"><div class="name">元件</div><div class="track"><div class="fill" style="width:361px"></div></div><div class="val">-5.13%</div></div>
+      <div class="row dn"><div class="name">光通信模块</div><div class="track"><div class="fill" style="width:327px"></div></div><div class="val">-4.64%</div></div>
+      <div class="row dn"><div class="name">CPO 概念</div><div class="track"><div class="fill" style="width:316px"></div></div><div class="val">-4.49%</div></div>
+    </div>
+
+    <div class="legend">
+      <div><span class="dot legup"></span>涨（红）</div>
+      <div><span class="dot legdn"></span>跌（绿）</div>
+    </div>
+    <div class="note">资金净流入居前：公用事业 +9.59 亿、电力 +9.40 亿、银行 +8.53 亿</div>
+  </div>
+</body>
+</html>

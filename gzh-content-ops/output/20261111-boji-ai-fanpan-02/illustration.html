@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>illustration 16:9</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; }
+  body {
+    background-color: #E9E6DE;
+    font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  }
+  .head {
+    height: 148px; background-color: #17181C;
+    padding: 0 72px; display: table; width: 100%;
+  }
+  .head .h-l, .head .h-r { display: table-cell; vertical-align: middle; }
+  .head .h-r { text-align: right; }
+  .head .t1 { color: #FFFFFF; font-size: 52px; font-weight: 700; letter-spacing: 2px; }
+  .head .t2 { color: #E8743B; font-size: 24px; letter-spacing: 4px; }
+  .wrap { padding: 62px 72px 0; }
+  table.cards { width: 100%; border-collapse: separate; border-spacing: 28px; }
+  table.cards td { width: 33.33%; vertical-align: top; }
+  .card {
+    background-color: #FFFFFF;
+    border: 1px solid #D8DEE7;
+    border-top: 6px solid #E8743B;
+    border-radius: 14px;
+    padding: 42px 38px 46px;
+    height: 470px;
+  }
+  .card .no { color: #1F2933; font-size: 76px; font-weight: 700; line-height: 1; opacity: .18; }
+  .card .title { color: #1F2933; font-size: 40px; font-weight: 700; margin-top: 26px; line-height: 1.35; }
+  .card .status { color: #44515F; font-size: 24px; margin-top: 22px; font-weight: 600; }
+  .card .desc { color: #44515F; font-size: 25px; line-height: 1.75; margin-top: 30px; }
+  .card.pending { border-top-color: #B9B5AC; }
+  .card.pending .status { color: #E8743B; }
+  .foot {
+    margin: 44px 72px 0; padding-top: 26px;
+    border-top: 1px solid #D8DEE7;
+    color: #44515F; font-size: 25px; letter-spacing: 1px;
+  }
+  .foot b { color: #1F2933; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="h-l"><div class="t1">210 个文件 → 3 张卡</div></div>
+    <div class="h-r"><div class="t2">薄肌 AI 翻盘 · 第 2 集</div></div>
+  </div>
+  <div class="wrap">
+    <table class="cards">
+      <tr>
+        <td>
+          <div class="card">
+            <div class="no">01</div>
+            <div class="title">内容创作<br>操作系统</div>
+            <div class="status">已接上</div>
+            <div class="desc">别每天从零想今天做什么。26 秒片子的三步流水线就是它。</div>
+          </div>
+        </td>
+        <td>
+          <div class="card">
+            <div class="no">02</div>
+            <div class="title">可负担的<br>自律</div>
+            <div class="status">不用翻</div>
+            <div class="desc">每周四次，四十分钟。练了三年，没请私教，不称克数。</div>
+          </div>
+        </td>
+        <td>
+          <div class="card pending">
+            <div class="no">03</div>
+            <div class="title">内容资产<br>飞轮</div>
+            <div class="status">还没跑通</div>
+            <div class="desc">每次做完都从零起稿，脚本没存成模板。明天先干这个。</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="foot"><b>其余 207 个，先放着。</b>　先写「我现在已经在跑的是什么」，写不出三条，别翻体系。</div>
+</body>
+</html>

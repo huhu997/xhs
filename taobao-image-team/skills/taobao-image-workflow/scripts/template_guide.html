@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>{{SKU}} 3:4 导购主图</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:720px;font-family:"Microsoft YaHei",sans-serif;background:#fff}
+.card{width:720px;height:960px;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:64px 56px}
+.dark{background:linear-gradient(160deg,#0f1a33 0%,#17264d 62%,#1e3263 100%);color:#fff}
+.light{background:#f4f6fb;color:#1c2434}
+.dark::after{content:"";position:absolute;right:-150px;top:-150px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,80,0,.30),transparent 70%)}
+.badge{align-self:flex-start;background:#FF5000;color:#fff;font-size:26px;font-weight:700;padding:9px 24px;border-radius:999px;position:relative}
+.t{margin-top:34px;font-size:64px;font-weight:900;line-height:1.22;position:relative}
+.t .o{color:#FFB25E}
+.light .t{color:#0f1a33}
+.light .t .o{color:#FF5000}
+.sub{margin-top:20px;font-size:28px;line-height:1.5;color:#c9d6ef;position:relative}
+.light .sub{color:#5a6a85}
+.pts{margin-top:auto;display:flex;flex-direction:column;gap:18px;position:relative}
+.pt{font-size:33px;font-weight:700;border-left:8px solid #FF5000;padding-left:20px;line-height:1.32}
+.bar{margin-top:32px;display:flex;justify-content:space-between;align-items:center;position:relative;border-top:2px solid rgba(255,255,255,.16);padding-top:26px}
+.light .bar{border-top:2px solid #dde4f0}
+.price{font-size:50px;font-weight:900;color:#FFB25E}
+.light .price{color:#FF5000}
+.price span{font-size:26px;font-weight:700;margin-left:6px}
+.bar .r{font-size:24px;color:#8fa3c8}
+.list{margin-top:40px;display:flex;flex-direction:column;gap:26px}
+.li{font-size:31px;line-height:1.5;padding-left:38px;position:relative}
+.li::before{content:"";position:absolute;left:0;top:16px;width:16px;height:16px;background:#FF5000;border-radius:4px}
+.steps{margin-top:40px;display:flex;flex-direction:column;gap:24px}
+.step{display:flex;align-items:center;gap:22px;background:#fff;border:3px solid #e3e9f5;border-radius:18px;padding:22px 26px}
+.step .n{width:64px;height:64px;flex:none;border-radius:50%;background:#FF5000;color:#fff;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.step .x{font-size:30px;font-weight:800;line-height:1.25}
+.step .y{font-size:24px;color:#5a6a85;margin-top:4px;line-height:1.3}
+.tiers{margin-top:auto;display:flex;flex-direction:column;gap:20px;position:relative}
+.tier{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center}
+.tier .a{font-size:29px;font-weight:800;line-height:1.3}
+.tier .b{font-size:22px;color:#a9b8d6;margin-top:6px}
+.tier .c{font-size:40px;font-weight:900;color:#FFB25E;white-space:nowrap;margin-left:18px}
+.card.has-img{flex-direction:row;align-items:stretch;gap:28px}
+.card.has-img .pimg{flex:0 0 44%;background:#fff;border-radius:20px;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;z-index:1}
+.card.has-img .pimg img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px}
+.card.has-img .body{flex:1;display:flex;flex-direction:column;min-width:0}
+.card.has-img .price{font-size:38px;white-space:nowrap}
+.card.has-img .bar .r{color:#aab8d6}
+</style></head><body>
+{{CARDS}}
+</body></html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:"PingFang SC","Microsoft YaHei UI","Microsoft YaHei","Segoe UI Emoji","Segoe UI",sans-serif;
+  background:linear-gradient(160deg,#fff7f0 0%,#ffe2d2 100%);
+  color:#1d1d1f; -webkit-font-smoothing:antialiased;
+  display:flex; align-items:center; justify-content:center; min-height:1440px;
+}
+.wrap { width:86%; max-width:940px; }
+.pill { display:inline-block; background:#ff5a3c; color:#fff; font-size:30px; padding:12px 28px; border-radius:999px; font-weight:700; margin-bottom:40px; }
+h2 { font-size:66px; font-weight:800; letter-spacing:-0.5px; line-height:1.25; }
+h2 .u { background:linear-gradient(transparent 64%, #ffc9b8 64%); padding:0 2px; }
+.sub { font-size:32px; color:#b06a4f; font-weight:600; margin:14px 0 40px; }
+.steps { display:flex; flex-direction:column; gap:20px; margin-bottom:40px; }
+.step { display:flex; align-items:center; gap:24px; background:#fff; border:1px solid #ffe0d2; border-radius:20px; padding:28px 30px; box-shadow:0 4px 18px rgba(255,90,60,0.10); }
+.badge { flex:0 0 auto; width:76px; height:76px; border-radius:50%; background:#ff5a3c; color:#fff; font-size:32px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.emoji { font-size:46px; flex:0 0 auto; }
+.txt { font-size:35px; line-height:1.42; }
+.txt b { color:#ff5a3c; display:block; font-size:38px; }
+.demo { background:#fff; border:2px dashed #ffb59e; border-radius:20px; padding:30px 34px; margin-bottom:40px; }
+.demo .lab { font-size:30px; color:#b06a4f; font-weight:700; margin-bottom:18px; }
+.demo .quote { font-size:31px; color:#1d1d1f; line-height:1.55; }
+.demo .quote b { color:#ff5a3c; }
+.foot { background:#fff3ec; border:1px solid #ffd0bc; border-radius:20px; padding:28px 32px; font-size:32px; color:#7a3a26; line-height:1.48; box-shadow:0 4px 18px rgba(255,90,60,0.10); }
+.foot b { color:#ff5a3c; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="pill">信息整理 · AI 提效</div>
+  <h2>一张卡，<span class="u">3 步</span>就能用</h2>
+  <div class="sub">📋 以卡 01 为例</div>
+  <div class="steps">
+    <div class="step"><span class="badge">01</span><span class="emoji">📋</span><span class="txt"><b>看适用场景</b>先认出你手里是哪种「乱」</span></div>
+    <div class="step"><span class="badge">02</span><span class="emoji">✏️</span><span class="txt"><b>换掉【】里的变量</b>把你的资料贴进去</span></div>
+    <div class="step"><span class="badge">03</span><span class="emoji">✅</span><span class="txt"><b>整段复制给 AI</b>一次发出，按格式拿结果</span></div>
+  </div>
+  <div class="demo">
+    <div class="lab">📇 卡 01 长这样</div>
+    <div class="quote">「你是一个信息整理助手。请把我下面这段长文，整理成不超过 5 条要点……<b>【粘贴你的长文】</b>」</div>
+  </div>
+  <div class="foot">每张卡都留了 <b>「别编 / 别猜 / 缺的标出来」</b>——整理是看清手里有什么，不是让 AI 替你补</div>
+</div>
+</body>
+</html>

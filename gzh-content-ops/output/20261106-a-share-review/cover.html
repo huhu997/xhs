@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1880px; height:800px; }
+  .wrap { width:1880px; height:800px; background:#0B1F38; position:relative;
+          font-family:"Noto Sans SC","Microsoft YaHei",sans-serif; overflow:hidden; }
+  .scrim { position:absolute; left:240px; right:240px; top:0; bottom:0;
+           background:linear-gradient(90deg, rgba(4,12,24,0) 0%, rgba(4,12,24,0.90) 14%, rgba(4,12,24,0.90) 86%, rgba(4,12,24,0) 100%); }
+  .deco { position:absolute; left:0; right:0; bottom:0; height:12px; background:#E8B84B; }
+  .inner { position:absolute; left:0; right:0; top:0; bottom:0; display:flex; flex-direction:column;
+           align-items:center; justify-content:center; text-align:center; }
+  .kicker { color:#E8B84B; font-size:46px; font-weight:700; letter-spacing:4px; margin-bottom:30px; }
+  .rule { width:130px; height:9px; background:#E8B84B; margin-bottom:34px; border-radius:5px; }
+  .t1 { color:#FFFFFF; font-size:98px; font-weight:900; line-height:1.05; letter-spacing:2px;
+        text-shadow:0 3px 16px rgba(0,0,0,0.55); white-space:nowrap; }
+  .t2 { color:#F4F1EA; font-size:66px; font-weight:800; line-height:1.25; margin-top:30px;
+        text-shadow:0 2px 12px rgba(0,0,0,0.5); white-space:nowrap; }
+  .t2 b { color:#E8B84B; font-weight:900; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="scrim"></div>
+    <div class="inner">
+      <div class="kicker">2026.11.06 收盘复盘</div>
+      <div class="rule"></div>
+      <div class="t1">A股为何没跟着崩</div>
+      <div class="t2">费半单日跌 <b>12%</b></div>
+    </div>
+    <div class="deco"></div>
+  </div>
+</body>
+</html>

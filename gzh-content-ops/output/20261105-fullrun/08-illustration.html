@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>机制拆解 · 两杆秤</title>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{width:1600px;height:900px;overflow:hidden;}
+  /* 三色同源：暖米 #F1EADA 底纸，墨绿 #1F4A3C 结构/文字，朱红 #D9462B 点睛。绿不承载涨跌语义，图内无精确数字。 */
+  .wrap{position:relative;width:1600px;height:900px;background:#F1EADA;overflow:hidden;
+        font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;}
+  .frame{position:absolute;left:34px;top:34px;right:34px;bottom:34px;border:1px solid rgba(31,74,60,.28);}
+
+  /* 顶部标题区 */
+  .head{position:absolute;left:90px;right:90px;top:54px;height:120px;}
+  .kicker{display:inline-block;background:#1F4A3C;color:#F1EADA;font-size:21px;font-weight:600;
+          letter-spacing:6px;text-indent:6px;padding:8px 18px;}
+  .title{position:absolute;left:0;top:72px;font-family:'Noto Serif SC','Songti SC','STSong',serif;
+         font-size:52px;font-weight:700;color:#1F4A3C;letter-spacing:3px;}
+  .reddot{position:absolute;right:0;top:26px;width:14px;height:14px;background:#D9462B;}
+  .hr{position:absolute;left:90px;right:90px;top:190px;height:2px;background:rgba(31,74,60,.22);}
+
+  /* 左右面板 */
+  .panel{position:absolute;top:224px;width:640px;height:472px;border:2px solid #1F4A3C;}
+  .panel.left{left:90px;}
+  .panel.right{left:870px;}
+  .cap{height:56px;background:#1F4A3C;color:#F1EADA;font-size:26px;font-weight:600;
+       letter-spacing:8px;text-indent:8px;line-height:56px;text-align:center;}
+  .stage{position:relative;height:262px;overflow:hidden;}
+
+  /* 左：一杆只称得动几个人的秤（极简天平） */
+  .balance-line{position:absolute;left:56px;right:56px;top:132px;height:0;border-top:2px dashed rgba(31,74,60,.22);}
+  .beam{position:absolute;left:108px;top:126px;width:420px;height:12px;background:#1F4A3C;
+        transform:rotate(-8deg);border-radius:2px;}
+  .pivot{position:absolute;left:296px;top:138px;width:0;height:0;
+         border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:44px solid #1F4A3C;}
+  .blk{position:absolute;background:#D9462B;}
+  .b1{left:98px;top:158px;width:92px;height:88px;}
+  .b2{left:198px;top:188px;width:70px;height:58px;}
+  .blk-lab{position:absolute;left:112px;top:184px;color:#F1EADA;font-size:24px;font-weight:700;letter-spacing:4px;}
+  .sdot{position:absolute;width:16px;height:16px;border-radius:50%;background:#1F4A3C;}
+  .s1{left:470px;top:60px;}.s2{left:502px;top:50px;}.s3{left:534px;top:62px;}
+  .s4{left:488px;top:86px;}.s5{left:520px;top:80px;}.s6{left:550px;top:90px;}
+  .few{position:absolute;right:26px;top:22px;font-size:20px;font-weight:600;letter-spacing:3px;color:#1F4A3C;}
+
+  /* 右：一票一票算（等大点阵，右缘渐隐避免半圆突兀） */
+  .cloud{position:absolute;left:40px;top:44px;width:560px;height:196px;
+    background-image:radial-gradient(#1F4A3C 9px,transparent 9px);
+    background-size:72px 72px;background-position:20px 10px;
+    -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent 100%);
+            mask-image:linear-gradient(90deg,#000 88%,transparent 100%);}
+  .baseline{position:absolute;left:40px;right:40px;top:246px;height:2px;background:#1F4A3C;}
+  .all-lab{position:absolute;left:44px;top:16px;background:#F1EADA;padding:3px 10px;
+           font-size:20px;font-weight:600;letter-spacing:3px;color:#1F4A3C;}
+
+  /* 面板脚：标签条（标签均 2–6 字） */
+  .foot{height:150px;padding:18px 26px;}
+  .lead{display:inline-block;font-size:26px;font-weight:700;letter-spacing:4px;padding:5px 14px;}
+  .lead.red{background:#D9462B;color:#F1EADA;}
+  .lead.green{background:#1F4A3C;color:#F1EADA;}
+  .eq{margin:10px 0 0;font-size:21px;font-weight:600;color:#1F4A3C;letter-spacing:3px;}
+  .note{margin:6px 0 0;font-size:17px;color:rgba(31,74,60,.72);letter-spacing:2px;}
+
+  /* 中间：朱红「≠」圆章 */
+  .neq{position:absolute;left:752px;top:400px;width:96px;height:96px;border-radius:50%;
+       background:#D9462B;color:#F1EADA;font-family:Arial,sans-serif;font-size:54px;font-weight:700;
+       text-align:center;line-height:96px;}
+  .vline1{position:absolute;left:799px;top:236px;width:2px;height:150px;background:rgba(31,74,60,.35);}
+  .vline2{position:absolute;left:799px;top:508px;width:2px;height:160px;background:rgba(31,74,60,.35);}
+
+  /* 底部结论条 */
+  .bar{position:absolute;left:90px;right:90px;bottom:56px;height:112px;background:#1F4A3C;}
+  .bar .m{position:absolute;left:40px;top:22px;font-family:'Noto Serif SC','Songti SC',serif;
+          font-size:38px;font-weight:700;color:#F1EADA;letter-spacing:5px;}
+  .bar .s{position:absolute;left:42px;top:72px;font-size:19px;color:rgba(241,234,218,.72);letter-spacing:4px;}
+  .bar .sq{position:absolute;right:40px;top:40px;width:32px;height:32px;background:#D9462B;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame"></div>
+
+  <div class="head">
+    <span class="kicker">机制拆解</span>
+    <div class="title">称法不同，读数不同</div>
+    <div class="reddot"></div>
+  </div>
+  <div class="hr"></div>
+
+  <!-- 左：总市值加权 / 一杆只称得动几个人的秤 ≈ 平均数 -->
+  <div class="panel left">
+    <div class="cap">按权重</div>
+    <div class="stage">
+      <div class="balance-line"></div>
+      <div class="beam"></div>
+      <div class="pivot"></div>
+      <div class="blk b1"></div><div class="blk b2"></div>
+      <div class="blk-lab">权重</div>
+      <div class="sdot s1"></div><div class="sdot s2"></div><div class="sdot s3"></div>
+      <div class="sdot s4"></div><div class="sdot s5"></div><div class="sdot s6"></div>
+      <div class="few">只称几人</div>
+    </div>
+    <div class="foot">
+      <span class="lead red">总市值加权</span>
+      <p class="eq">≈ 平均数</p>
+      <p class="note">只称几人，压住一杆秤</p>
+    </div>
+  </div>
+
+  <!-- 右：一票一票算 / 全市场 ≈ 中位数 -->
+  <div class="panel right">
+    <div class="cap">按人头</div>
+    <div class="stage">
+      <div class="cloud"></div>
+      <div class="all-lab">全市场</div>
+      <div class="baseline"></div>
+    </div>
+    <div class="foot">
+      <span class="lead green">一票一票算</span>
+      <p class="eq">≈ 中位数</p>
+      <p class="note">一只票，算一票</p>
+    </div>
+  </div>
+
+  <div class="vline1"></div>
+  <div class="neq">≠</div>
+  <div class="vline2"></div>
+
+  <div class="bar">
+    <div class="m">平均数 ≠ 中位数</div>
+    <div class="s">差在算法，不在行情</div>
+    <div class="sq"></div>
+  </div>
+</div>
+</body>
+</html>

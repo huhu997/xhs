@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>cover 2.35:1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1880px; height: 800px; overflow: hidden; }
+  body {
+    background-color: #17181C;
+    font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    position: relative;
+  }
+  .bg-line { position: absolute; background-color: rgba(233,230,222,0.07); }
+  .l1 { left: 0; top: 132px; width: 1880px; height: 1px; }
+  .l2 { left: 0; top: 668px; width: 1880px; height: 1px; }
+  .side-num {
+    position: absolute; font-size: 300px; font-weight: 700;
+    color: rgba(233,230,222,0.045); letter-spacing: -18px; line-height: 1;
+  }
+  .side-num.left  { left: -40px; top: 250px; }
+  .side-num.right { right: -60px; top: 210px; }
+  .accent {
+    position: absolute; width: 8px; height: 88px;
+    background-color: #E8743B;
+  }
+  .a1 { left: 300px; top: 356px; }
+  .a2 { right: 300px; top: 356px; }
+  .safe {
+    position: absolute; left: 545px; top: 0;
+    width: 790px; height: 800px;
+    display: table;
+  }
+  .inner { display: table-cell; vertical-align: middle; text-align: center; }
+  .kicker {
+    color: #E8743B; font-size: 26px; letter-spacing: 8px;
+    margin-bottom: 34px; font-weight: 600;
+  }
+  h1 {
+    color: #FFFFFF; font-size: 82px; line-height: 1.28;
+    font-weight: 700; letter-spacing: 2px;
+  }
+  h1 .small { font-size: 62px; color: #E9E6DE; }
+  .rule {
+    width: 92px; height: 4px; background-color: #E8743B;
+    margin: 38px auto 32px;
+  }
+  .sub {
+    color: #B9B5AC; font-size: 30px; letter-spacing: 2px;
+    line-height: 1.6;
+  }
+  .byline {
+    position: absolute; left: 545px; width: 790px; bottom: 46px;
+    text-align: center; color: #E9E6DE; font-size: 24px;
+    letter-spacing: 4px; opacity: .82;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-line l1"></div>
+  <div class="bg-line l2"></div>
+  <div class="side-num left">210</div>
+  <div class="side-num right">03</div>
+  <div class="accent a1"></div>
+  <div class="accent a2"></div>
+  <div class="safe">
+    <div class="inner">
+      <div class="kicker">薄肌 AI 翻盘 · 第 2 集</div>
+      <h1>210 个文件<br><span class="small">我只留下三张卡</span></h1>
+      <div class="rule"></div>
+      <div class="sub">体系不是拿来收藏的，是拿来补缺口的</div>
+    </div>
+  </div>
+  <div class="byline">薄肌小王 · 个人观察</div>
+</body>
+</html>

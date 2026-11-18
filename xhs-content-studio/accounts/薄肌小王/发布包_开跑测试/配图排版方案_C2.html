@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C2 配图排版方案 · 薄肌小王</title>
+<style>
+  :root{
+    --bg:#FBF6EF;        /* 米白 */
+    --bg2:#F3E9DC;       /* 浅杏 */
+    --ink:#3A2E26;       /* 深棕正文 */
+    --ink2:#6B5B4F;      /* 次级棕 */
+    --accent:#E8893B;    /* 暖橙强调 */
+    --line:#E4D7C6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#EDE6DC;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);padding:32px 16px;}
+  h1{font-size:22px;text-align:center;margin-bottom:6px;color:var(--ink);}
+  .sub{text-align:center;color:var(--ink2);font-size:13px;margin-bottom:28px;}
+  .grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;max-width:1100px;margin:0 auto;}
+  .card{width:300px;background:var(--bg);border-radius:18px;padding:22px;box-shadow:0 6px 18px rgba(90,70,50,.10);border:1px solid var(--line);display:flex;flex-direction:column;}
+  .idx{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;align-self:flex-start;margin-bottom:12px;}
+  .ct{font-size:19px;font-weight:800;line-height:1.35;margin-bottom:10px;}
+  .st{font-size:13px;color:var(--ink2);line-height:1.6;flex:1;}
+  .tag{margin-top:14px;font-size:11px;color:var(--accent);border-top:1px dashed var(--line);padding-top:10px;}
+  .note{max-width:1100px;margin:28px auto 0;background:#fff; border-radius:14px;padding:18px 20px;font-size:13px;color:var(--ink2);line-height:1.7;border:1px solid var(--line);}
+  .note b{color:var(--ink);}
+  .footer{text-align:center;color:#9a8b7d;font-size:11px;margin-top:24px;}
+</style>
+</head>
+<body>
+  <h1>C2 · 配图排版方案（出图降级版）</h1>
+  <div class="sub">薄肌小王 ｜ 场景帖「AI 一本正经编数据」｜ 风格：Apple 暖色风（全篇一套）｜ 尺寸 1080×1440 / 3:4</div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="idx">图 1 · 封面</span>
+      <div class="ct">AI 一本正经编数据<br>怎么办？</div>
+      <div class="st">副文案：做过投研的人，先过这 3 道核对。<br><br>视觉：米白底 + 深棕大字标题，底部一道暖橙强调条；右上小标「薄肌小王 · 用 AI 折腾副业的记录者」。</div>
+      <div class="tag">主标题 ≤12 字 ✔ ｜ 占高 ≥20% ✔</div>
+    </div>
+
+    <div class="card">
+      <span class="idx">图 2 · 场景冲突</span>
+      <div class="ct">小数点后两位<br>都齐了，却是编的</div>
+      <div class="st">对话气泡式：左「AI：行业数据 38.27%」→ 右「我核对来源：它根本没说过 😳」。<br><br>暖橙高亮「自己编的」四字。</div>
+      <div class="tag">冲突画面 ✔ ｜ 可截图细节 ✔</div>
+    </div>
+
+    <div class="card">
+      <span class="idx">图 3 · 真实资产</span>
+      <div class="ct">我做情报系统时<br>养成的铁律</div>
+      <div class="st">「任何数字进库前，必须先过核对，来源不清一律不进。」<br><br>小字背书：财联社 VIP 情报猎手系统 · 双源比对，单源不做结论。<br><br>人设信任段，不荐股。</div>
+      <div class="tag">G-A 真实资产落地 ✔</div>
+    </div>
+
+    <div class="card">
+      <span class="idx">图 4 · 三道核对</span>
+      <div class="ct">查资料前<br>先过这 3 道</div>
+      <div class="st">① 追来源：答不上来当没看见<br>② 交叉验证：双源对上才算数<br>③ 警惕假精确：越漂亮越小心</div>
+      <div class="tag">交付物清单卡 ✔</div>
+    </div>
+
+    <div class="card">
+      <span class="idx">图 5 · 钩子引导</span>
+      <div class="ct">扣【核对】<br>领自查清单</div>
+      <div class="st">「交叉验证自查清单整理好了，扣【核对】发你，查资料前过一遍，比事后返工省事。」<br><br>站内扣词，无外链 / 无店铺导流。</div>
+      <div class="tag">钩子换皮 ✔ ｜ 未现「纯分享不卖课」</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>出图说明：</b>本环境无图像生成工具 / 无 <code>GPTIMAGE_API_KEY</code>，<code>xiaohongshu-cover</code> 无法实际渲图，故降级为排版方案。
+    有渲染能力时，请用 cover skill 以 <b>Apple 暖色风</b> 生成 5 张 3:4 真图（一套风格，不混 guizang 瑞士风）。
+    合规已核：不荐股、不编交易经历、不承诺收益、不导流外溢；无「最/第一/绝对」等限流词。
+  </div>
+
+  <div class="footer">薄肌小王 · 发布包_开跑测试 · C2 场景帖 · 生成于 2026-11-05</div>
+</body>
+</html>

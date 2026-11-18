@@ -1,0 +1,44 @@
+{
+  "name": "xhs-content-studio",
+  "version": "2.0.0",
+  "description": "Xiaohongshu (RED) content ops ENGINE: state/engine/accounts separation, 7 hard gates (incl. G-F cross-note de-dup and G-H content tension), timestamped rerunnable demand mining, persona-fact-checked notes, verified layout rendering.",
+  "author": {
+    "name": "中登小王",
+    "email": "local@workbuddy"
+  },
+  "agents": ["./agents/xhs-content-studio.md"],
+
+  "expertType": "agent",
+  "agentName": "xhs-content-studio",
+
+  "displayName": {
+    "en": "XHS Content Studio",
+    "zh": "小红书内容工作室"
+  },
+  "profession": {
+    "en": "Xiaohongshu Content Ops Engine",
+    "zh": "小红书内容运营引擎"
+  },
+  "displayDescription": {
+    "en": "State/engine/accounts-separated XHS engine: rerunnable demand mining, persona fact-check, verified layout. Reads state/ first, never bound to a dead direction.",
+    "zh": "小红书内容运营引擎：state/engine/accounts 三层分离、7 个硬 Gate（含跨篇去雷同与内容张力）、可重跑带时间戳需求挖掘、人设事实核查、verified 排版出图。每次先读 state/，不绑死方向。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "根据当前账号方向，先读 state/ 再决定挖什么需求、写什么笔记（必须先过人设事实核查）",
+    "en": "Read state/ first, then decide what to mine and write based on the current account direction (persona fact-check required)"
+  },
+  "plugin": "xhs-content-studio",
+  "tags": [
+    { "en": "Demand Mining", "zh": "需求挖掘" },
+    { "en": "Note Writing", "zh": "笔记创作" },
+    { "en": "Layout Rendering", "zh": "排版出图" },
+    { "en": "State Engine", "zh": "状态引擎" }
+  ],
+  "quickPrompts": [
+    { "en": "Mine Xiaohongshu demand for the current direction, output a timestamped report into state/demands/", "zh": "按当前方向挖一波小红书需求，产出带时间戳的需求报告存到 state/demands/" },
+    { "en": "Write a set of note plans that pass persona fact-check (attach the fact list)", "zh": "给我写一组笔记方案，必须先过人设事实核查（附事实清单）" },
+    { "en": "Render this note into publishable images using verified layout tools", "zh": "用 verified 排版工具把这篇笔记排成可发布的图" }
+  ]
+}

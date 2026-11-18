@@ -1,0 +1,176 @@
+{
+  "name": "ai-video-factory",
+  "version": "1.0.0",
+  "description": "Top-tier cloud-based AI video production team (14 roles) assembled with the best audited skills: topic, script, AI generation, digital avatar, editing, asset hunting, motion, data viz, cover/brand, QA review and publishing — plus manga/drama capability (character consistency + motion/lip-sync). No local GPU models by default; local lip-sync (LivePortrait/AnimateDiff) is an optional zero-cloud route enabled only on user approval.",
+  "author": {
+    "name": "WorkBuddy User",
+    "email": "user@local"
+  },
+  "agents": [
+    "./agents/ai-video-factory-team-lead.md",
+    "./agents/topic-strategist.md",
+    "./agents/script-board.md",
+    "./agents/ai-generation.md",
+    "./agents/avatar-presenter.md",
+    "./agents/post-editor.md",
+    "./agents/publish-growth.md",
+    "./agents/asset-hunter.md",
+    "./agents/motion-designer.md",
+    "./agents/data-visualizer.md",
+    "./agents/cover-brand-designer.md",
+    "./agents/qa-reviewer.md",
+    "./agents/character-designer.md",
+    "./agents/motion-avatar.md"
+  ],
+
+  "expertType": "team",
+  "agentName": "ai-video-factory-team-lead",
+  "teamInfo": {
+    "leadAgent": "ai-video-factory-team-lead",
+    "memberAgents": [
+      "topic-strategist",
+      "script-board",
+      "ai-generation",
+      "avatar-presenter",
+      "post-editor",
+      "publish-growth",
+      "asset-hunter",
+      "motion-designer",
+      "data-visualizer",
+      "cover-brand-designer",
+      "qa-reviewer",
+      "character-designer",
+      "motion-avatar"
+    ]
+  },
+
+  "displayName": {
+    "en": "AI Video Factory Team",
+    "zh": "AI视频工厂专家团"
+  },
+  "profession": {
+    "en": "AI Video Factory Team",
+    "zh": "AI视频工厂专家团"
+  },
+  "displayDescription": {
+    "en": "Top-tier 14-role AI video production team built from the best audited skills: topic, script, AI generation, digital avatar, editing, asset hunting, motion design, data viz, cover/brand, QA review and multi-platform publishing — now with manga/drama pipeline (character consistency + motion/lip-sync).",
+    "zh": "14角色AI视频生产团：选题·脚本·生成·数字人·剪辑·审片·发布 + 漫剧管线（角色一致性·动态化对口型，顶级已审skill）"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我要做一条AI视频，从选题到发布帮我全流程跑一遍。",
+    "en": "Run a full AI video production pipeline for me, from topic to publish."
+  },
+  "plugin": "ai-video-factory",
+  "tags": [
+    { "en": "AI Video Production", "zh": "AI视频生产" },
+    { "en": "Short-Video Commerce", "zh": "短视频带货" },
+    { "en": "Script-to-Video", "zh": "脚本转视频" }
+  ],
+  "quickPrompts": [
+    { "en": "Run a full AI video production pipeline for me, from topic to publish.", "zh": "我要做一条AI视频，从选题到发布帮我全流程跑一遍。" },
+    { "en": "Turn this article into a short video.", "zh": "把这篇干货文章转成一条短视频。" },
+    { "en": "Help me break down and clone a viral video's production approach.", "zh": "帮我拆解并克隆一个爆款视频的拍摄思路。" }
+  ],
+  "members": [
+    {
+      "id": "ai-video-factory-team-lead",
+      "displayName": { "en": "Fu Yingqiao", "zh": "傅映桥" },
+      "profession": { "en": "Chief Producer", "zh": "总制片人" },
+      "avatar": "avatars/ai-video-factory-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "topic-strategist",
+      "displayName": { "en": "Su Toudian", "zh": "苏透点" },
+      "profession": { "en": "Topic Strategist", "zh": "选题策划师" },
+      "avatar": "avatars/topic-strategist.png",
+      "role": "member"
+    },
+    {
+      "id": "script-board",
+      "displayName": { "en": "Wen Mubai", "zh": "文幕白" },
+      "profession": { "en": "Script & Storyboard Artist", "zh": "脚本分镜师" },
+      "avatar": "avatars/script-board.png",
+      "role": "member"
+    },
+    {
+      "id": "ai-generation",
+      "displayName": { "en": "Fan Xiangsheng", "zh": "范像生" },
+      "profession": { "en": "AI Generation Director", "zh": "AI生成导演" },
+      "avatar": "avatars/ai-generation.png",
+      "role": "member"
+    },
+    {
+      "id": "avatar-presenter",
+      "displayName": { "en": "Lang Yingren", "zh": "郎映人" },
+      "profession": { "en": "Digital Avatar Presenter", "zh": "数字人口播师" },
+      "avatar": "avatars/avatar-presenter.png",
+      "role": "member"
+    },
+    {
+      "id": "post-editor",
+      "displayName": { "en": "Yan Guojian", "zh": "严过剪" },
+      "profession": { "en": "Post-Editor", "zh": "剪辑后期师" },
+      "avatar": "avatars/post-editor.png",
+      "role": "member"
+    },
+    {
+      "id": "publish-growth",
+      "displayName": { "en": "Huo Tuishou", "zh": "霍推手" },
+      "profession": { "en": "Publish & Growth Operator", "zh": "发布增长官" },
+      "avatar": "avatars/publish-growth.png",
+      "role": "member"
+    },
+    {
+      "id": "asset-hunter",
+      "displayName": { "en": "Ji Lieshou", "zh": "季猎手" },
+      "profession": { "en": "Asset & Reference Hunter", "zh": "素材猎手" },
+      "avatar": "avatars/asset-hunter.png",
+      "role": "member"
+    },
+    {
+      "id": "motion-designer",
+      "displayName": { "en": "Dong Xiaoshi", "zh": "董效实" },
+      "profession": { "en": "Motion & Animation Designer", "zh": "动效设计师" },
+      "avatar": "avatars/motion-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "data-visualizer",
+      "displayName": { "en": "Tu Huatu", "zh": "涂画图" },
+      "profession": { "en": "Data & Finance Visualizer", "zh": "数据可视化师" },
+      "avatar": "avatars/data-visualizer.png",
+      "role": "member"
+    },
+    {
+      "id": "cover-brand-designer",
+      "displayName": { "en": "Zhao Fengmian", "zh": "赵封面" },
+      "profession": { "en": "Cover & Brand Designer", "zh": "封面品牌师" },
+      "avatar": "avatars/cover-brand-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "qa-reviewer",
+      "displayName": { "en": "Shen Pianguan", "zh": "审片官" },
+      "profession": { "en": "QA & Review Officer", "zh": "成片审片官" },
+      "avatar": "avatars/qa-reviewer.png",
+      "role": "member"
+    },
+    {
+      "id": "character-designer",
+      "displayName": { "en": "Man Sheshou", "zh": "漫设守" },
+      "profession": { "en": "Comic Character Designer", "zh": "漫画角色设定师" },
+      "avatar": "avatars/character-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "motion-avatar",
+      "displayName": { "en": "Dong Xiangshi", "zh": "动像师" },
+      "profession": { "en": "Motion & Lip-Sync Artist", "zh": "动态化对口型师" },
+      "avatar": "avatars/motion-avatar.png",
+      "role": "member"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1880px; height:800px; overflow:hidden; }
+  body {
+    font-family:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif;
+    background-color:#0E2A47;
+    position:relative;
+  }
+  .bg {
+    position:absolute; left:0; top:0; width:1880px; height:800px;
+    background:linear-gradient(128deg,#0E2A47 0%,#123A5E 52%,#081A2E 100%);
+  }
+  .veil {
+    position:absolute; left:470px; top:0; width:940px; height:800px;
+    background:rgba(5,18,33,0.42);
+  }
+  .grid {
+    position:absolute; left:0; top:0; width:1880px; height:800px;
+    background-image:linear-gradient(rgba(255,255,255,0.045) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,0.045) 1px,transparent 1px);
+    background-size:80px 80px;
+  }
+  .rule-l { position:absolute; left:180px; top:150px; width:2px; height:500px; background-color:rgba(200,162,75,0.45); }
+  .rule-r { position:absolute; right:180px; top:150px; width:2px; height:500px; background-color:rgba(200,162,75,0.45); }
+  .dots { position:absolute; left:228px; top:334px; width:96px; height:132px; }
+  .dots i { display:block; float:left; width:6px; height:6px; margin:0 18px 18px 0; background-color:rgba(234,241,250,0.28); }
+  .dots-r { position:absolute; right:228px; top:334px; width:96px; height:132px; }
+  .dots-r i { display:block; float:left; width:6px; height:6px; margin:0 18px 18px 0; background-color:rgba(234,241,250,0.28); }
+  .kicker {
+    position:absolute; left:540px; top:132px; width:800px; text-align:center;
+    color:#EAF1FA; font-size:26px; letter-spacing:8px; font-weight:400;
+  }
+  .title {
+    position:absolute; left:500px; top:246px; width:880px; text-align:center;
+    color:#FFFFFF; font-size:96px; line-height:1.28; font-weight:700; letter-spacing:3px;
+    text-shadow:0 4px 22px rgba(0,0,0,0.35);
+  }
+  .gold { position:absolute; left:900px; top:512px; width:80px; height:5px; background-color:#C8A24B; }
+  .sub {
+    position:absolute; left:520px; top:558px; width:840px; text-align:center;
+    color:#EAF1FA; font-size:35px; letter-spacing:1px; font-weight:400;
+  }
+  .author {
+    position:absolute; left:540px; top:706px; width:800px; text-align:center;
+    color:#B9CBDD; font-size:25px; letter-spacing:3px;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+  <div class="veil"></div>
+  <div class="rule-l"></div>
+  <div class="rule-r"></div>
+  <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="dots-r"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="kicker">行业观察 · 2026.11</div>
+  <div class="title">1000 部里<br>才跑出 1 部</div>
+  <div class="gold"></div>
+  <div class="sub">《持械入宋》刷屏之后，我查了分母</div>
+  <div class="author">薄肌小王 · 个人观察</div>
+</body>
+</html>

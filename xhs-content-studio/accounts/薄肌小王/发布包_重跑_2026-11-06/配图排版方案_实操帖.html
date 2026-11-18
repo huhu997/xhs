@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>薄肌小王 · 实操帖 配图排版方案（Apple 暖色风）</title>
+<style>
+  :root{
+    --bg:#FBF6EF;        /* 米白/浅杏底 */
+    --card:#FFFFFF;
+    --ink:#3A2E26;       /* 深棕正文 */
+    --sub:#8A7B6E;
+    --accent:#E8732C;    /* 暖橙强调 */
+    --line:#EDE2D5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;padding:32px 16px;}
+  h1{font-size:20px;text-align:center;margin-bottom:6px;letter-spacing:.5px;}
+  .meta{text-align:center;color:var(--sub);font-size:13px;margin-bottom:28px;}
+  .grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;max-width:1180px;margin:0 auto;}
+  .card{width:340px;height:453px;background:var(--card);border-radius:22px;box-shadow:0 8px 30px rgba(120,90,60,.12);padding:26px 24px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+  .tag{position:absolute;top:18px;right:18px;background:var(--accent);color:#fff;font-size:11px;padding:4px 10px;border-radius:20px;letter-spacing:.5px;}
+  .num{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:1px;margin-bottom:10px;}
+  .ttl{font-size:23px;font-weight:700;line-height:1.35;margin-bottom:14px;}
+  .sub{font-size:14px;color:var(--sub);line-height:1.7;flex:1;}
+  .accent-bar{height:6px;width:54px;background:var(--accent);border-radius:6px;margin-top:14px;}
+  .bullet{font-size:14px;line-height:1.85;color:var(--ink);}
+  .bullet b{color:var(--accent);}
+  .footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px;line-height:1.8;}
+  .note{background:#fff;border:1px dashed var(--accent);border-radius:14px;padding:14px 18px;max-width:760px;margin:22px auto 0;font-size:12px;color:var(--sub);line-height:1.8;}
+</style>
+</head>
+<body>
+  <h1>薄肌小王 · 实操帖 5 图排版方案</h1>
+  <div class="meta">视觉风格：Apple 暖色风（米白/浅杏底 + 深棕正文 + 暖橙强调，全篇一套）｜尺寸 1080×1440 / 3:4 JPG</div>
+
+  <div class="grid">
+    <!-- card1 封面 -->
+    <div class="card">
+      <div class="tag">封面</div>
+      <div class="num">PRACTICAL · 实操帖</div>
+      <div class="ttl">我把吃灰的收藏夹，用 AI 一次性归成了能搜的库</div>
+      <div class="sub">4 个具体动作，从「堆」变成「库」。<br>收藏夹躺了 200 篇，要用时一条搜不出？这篇能救。</div>
+      <div class="accent-bar"></div>
+    </div>
+
+    <!-- card2 个人场景 -->
+    <div class="card">
+      <div class="tag">场景</div>
+      <div class="num">为什么我能教你</div>
+      <div class="ttl">集了 93 个 skill，收藏夹也吃灰</div>
+      <div class="sub">平时写脚本扒小红书评论区、攒赛道资料，<br>自己收藏夹照样躺了快 200 篇。<br>后来把 300+ 篇笔记、1179 条评论归成能用的清单，<br>才逼出这套「散装→可搜」的方法。</div>
+      <div class="accent-bar"></div>
+    </div>
+
+    <!-- card3 动作①② -->
+    <div class="card">
+      <div class="tag">动作</div>
+      <div class="num">动作 1 — 2</div>
+      <div class="ttl">先倒出来，再补人话</div>
+      <div class="bullet">
+        <b>动作一 ·</b> 先别分类，先倒成总表（标题/来源/为什么存），不评判好坏。<br><br>
+        <b>动作二 ·</b> 给每条补一句人话结论 + 3 个关键词。<br>
+        「绝了家人们这个效率神器」→「用 AI 把会议纪要转成待办·适用远程团队」。
+      </div>
+      <div class="accent-bar"></div>
+    </div>
+
+    <!-- card4 动作③④ -->
+    <div class="card">
+      <div class="tag">动作</div>
+      <div class="num">动作 3 — 4</div>
+      <div class="ttl">归框架，反过来用</div>
+      <div class="bullet">
+        <b>动作三 ·</b> 归进 3-5 个会再用的框架，不是再开 20 个文件夹。<br>
+        我的四个：选题灵感 / 工具测评 / 变现方法 / 避坑。<br><br>
+        <b>动作四 ·</b> 想收藏前先搜库里有没有，搜不到再新增，做满一个月才不回潮。
+      </div>
+      <div class="accent-bar"></div>
+    </div>
+
+    <!-- card5 钩子 -->
+    <div class="card">
+      <div class="tag">钩子</div>
+      <div class="num">GET THE RULE</div>
+      <div class="ttl">扣【归库】领规则一张图</div>
+      <div class="sub">把 4 个动作做成了「收藏夹归库规则」一张图，<br>照着把散装收藏一次性归成能搜的库。<br>关注这号，能领成套能抄的资料。</div>
+      <div class="accent-bar"></div>
+    </div>
+  </div>
+
+  <div class="note">
+    出图降级说明：本环境无 GPTIMAGE_API_KEY，xiaohongshu-cover 无法实渲真图。以上为排版方案（文案 + 卡片结构 + Apple 暖色风变量），供有渲染能力时 1:1 出 3:4 JPG。禁止混用 guizang 瑞士风；全篇仅用一套暖色。
+  </div>
+
+  <div class="footer">薄肌小王 · 第 3 篇待发（实操帖）｜G-E 出图降级产物，非真图</div>
+</body>
+</html>

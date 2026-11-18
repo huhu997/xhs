@@ -1,0 +1,100 @@
+{
+  "name": "taobao-image-team",
+  "version": "1.1.0",
+  "description": "PRIVATE personal edition - a Taobao listing-image delivery team that turns any product into a full set of compliant on-shelf visuals via local rendering. Not for redistribution.",
+  "author": {
+    "name": "Admin (private, personal use only)",
+    "email": "admin@example.com"
+  },
+  "license": "PRIVATE - personal use only, not for redistribution",
+  "agents": [
+    "./agents/taobao-image-team-team-lead.md",
+    "./agents/intake-analyst.md",
+    "./agents/copywriter.md",
+    "./agents/visual-designer.md",
+    "./agents/render-engineer.md",
+    "./agents/qa-delivery.md"
+  ],
+  "skills": ["./skills/taobao-image-workflow"],
+
+  "expertType": "team",
+  "agentName": "taobao-image-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "taobao-image-team-team-lead",
+    "memberAgents": ["intake-analyst", "copywriter", "visual-designer", "render-engineer", "qa-delivery"]
+  },
+
+  "displayName": {
+    "en": "Taobao Listing Image Delivery Team",
+    "zh": "淘宝上架图交付专家团"
+  },
+  "profession": {
+    "en": "Taobao Listing Image Delivery Team",
+    "zh": "淘宝上架图交付专家团"
+  },
+  "displayDescription": {
+    "en": "A one-stop Taobao listing-image team covering requirement breakdown, copy, visual design, local rendering, QA slicing and compliant on-shelf delivery; supports self-use, order-taking and resale.",
+    "zh": "淘宝上架图交付团队：需求拆解、卖点文案、本地出图到切片质检、合规上架全包，支持自用、接单与售卖。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "07-SalesCommerce",
+  "defaultInitPrompt": {
+    "zh": "我要接一个淘宝上架图订单，帮我走完整交付流程",
+    "en": "I have a Taobao listing-image order, run the full delivery workflow for me."
+  },
+  "plugin": "taobao-image-team",
+  "tags": [
+    { "en": "Taobao Listing", "zh": "淘宝上架图" },
+    { "en": "E-commerce Visual", "zh": "电商视觉" },
+    { "en": "Delivery Ops", "zh": "交付运营" }
+  ],
+  "quickPrompts": [
+    { "en": "I have a Taobao listing-image order, run the full delivery workflow for me.", "zh": "我要接一个淘宝上架图订单，帮我走完整交付流程" },
+    { "en": "Make a Taobao main image + detail long image for a virtual product / apparel / food.", "zh": "给我做一个虚拟品/服装/食品的淘宝主图+详情长图" },
+    { "en": "Package this listing-image workflow as a sellable skill bundle.", "zh": "把这套上架图工作流打包成可售卖的技能包" }
+  ],
+  "members": [
+    {
+      "id": "taobao-image-team-team-lead",
+      "displayName": { "en": "Fan Chengdan", "zh": "范成单" },
+      "profession": { "en": "Delivery Operator", "zh": "交付操盘手" },
+      "avatar": "avatars/taobao-image-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "intake-analyst",
+      "displayName": { "en": "Xu Xidan", "zh": "许析单" },
+      "profession": { "en": "Intake Analyst", "zh": "接单拆解师" },
+      "avatar": "avatars/intake-analyst.png",
+      "role": "member"
+    },
+    {
+      "id": "copywriter",
+      "displayName": { "en": "Wen Dianjing", "zh": "文点睛" },
+      "profession": { "en": "Copywriter", "zh": "卖点文案师" },
+      "avatar": "avatars/copywriter.png",
+      "role": "member"
+    },
+    {
+      "id": "visual-designer",
+      "displayName": { "en": "Zhan Tuxin", "zh": "展图新" },
+      "profession": { "en": "Visual Designer", "zh": "视觉风格师" },
+      "avatar": "avatars/visual-designer.png",
+      "role": "member"
+    },
+    {
+      "id": "render-engineer",
+      "displayName": { "en": "Ke Chutu", "zh": "柯出图" },
+      "profession": { "en": "Render Engineer", "zh": "渲染执行师" },
+      "avatar": "avatars/render-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "qa-delivery",
+      "displayName": { "en": "Yan Dabiao", "zh": "严达标" },
+      "profession": { "en": "QA & Delivery", "zh": "合规交付师" },
+      "avatar": "avatars/qa-delivery.png",
+      "role": "member"
+    }
+  ]
+}

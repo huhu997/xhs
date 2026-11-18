@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>08-cover</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1880px; height:800px; overflow:hidden; background:#F4F1EA; }
+  .stage {
+    position:relative; width:1880px; height:800px; overflow:hidden;
+    background:#F4F1EA;
+  }
+  /* 报表纸竖格：极淡的账簿栏线 */
+  .ledger {
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(to right, rgba(14,42,71,.055) 0 1px, transparent 1px 47px);
+  }
+  /* 四周暗角，把视线收到中间 */
+  .vignette {
+    position:absolute; inset:0;
+    background:radial-gradient(120% 78% at 50% 46%, rgba(244,241,234,0) 42%, rgba(14,42,71,.055) 100%);
+  }
+  .topline { position:absolute; top:0; left:0; width:1880px; height:7px; background:#0E2A47; }
+  .goldline { position:absolute; top:7px; left:0; width:1880px; height:1px; background:rgba(200,162,75,.55); }
+
+  /* 左侧：卷宗编号刻度（纯装饰，无字） */
+  .leftrail { position:absolute; left:96px; top:150px; width:210px; }
+  .leftrail i { display:block; height:1px; background:rgba(14,42,71,.16); margin-bottom:26px; }
+  .leftrail i:nth-child(1) { width:210px; }
+  .leftrail i:nth-child(2) { width:150px; }
+  .leftrail i:nth-child(3) { width:210px; }
+  .leftrail i:nth-child(4) { width:96px; }
+  .leftrail i:nth-child(5) { width:210px; }
+  .leftrail i:nth-child(6) { width:172px; }
+  .leftrail i:nth-child(7) { width:210px; }
+
+  /* 右侧：一条旧金竖标尺 + 刻度（纯装饰，无字） */
+  .rightrail { position:absolute; right:126px; top:150px; width:150px; height:460px; }
+  .rightrail .bar { position:absolute; right:0; top:0; width:2px; height:460px; background:rgba(200,162,75,.55); }
+  .rightrail s { position:absolute; right:2px; height:1px; background:rgba(14,42,71,.22); }
+  .rightrail s:after { content:''; }
+  .rightrail s.a { width:112px; top:0; }
+  .rightrail s.b { width:56px; top:66px; }
+  .rightrail s.c { width:112px; top:132px; }
+  .rightrail s.d { width:34px; top:198px; }
+  .rightrail s.e { width:112px; top:264px; }
+  .rightrail s.f { width:70px; top:330px; }
+  .rightrail s.g2 { width:112px; top:396px; }
+  .rightrail s.h { width:22px; top:459px; background:rgba(217,70,43,.85); height:3px; }
+
+  /* 中间 42% 安全区：1880*0.42≈790 → x545~1335 */
+  .safe {
+    position:absolute; left:648px; top:0; width:740px; height:800px;
+    display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+  }
+  .eyebrow {
+    font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;
+    font-size:23px; font-weight:600; letter-spacing:.34em; color:#8B8577;
+    margin-bottom:24px;
+  }
+  .rule { width:66px; height:3px; background:#C8A24B; margin-bottom:32px; }
+  .title {
+    font-family:'Noto Serif SC','Songti SC',serif;
+    font-size:112px; font-weight:900; line-height:1.08; color:#0E2A47; letter-spacing:.012em;
+  }
+  .sub {
+    margin-top:40px;
+    font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;
+    font-size:26px; font-weight:400; color:#6B665C; letter-spacing:.04em;
+  }
+  .sub b { font-weight:700; color:#0E2A47; letter-spacing:.02em; }
+  .sub .gap { display:inline-block; width:22px; }
+
+  /* 底部：真实涨跌分布条（4869 涨 : 624 跌 : 80 平，纯装饰不载字） */
+  .strip {
+    position:absolute; left:0; bottom:0; width:1880px; height:76px;
+    display:flex; align-items:flex-end; justify-content:center; gap:18px;
+    padding:0 4px;
+  }
+  .strip i { display:block; width:12px; background:#D9462B; opacity:.85; }
+  .strip i.g { background:#2E7D5B; opacity:.8; }
+  .strip i.n { background:#8B8577; opacity:.65; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="ledger"></div>
+  <div class="vignette"></div>
+  <div class="topline"></div>
+  <div class="goldline"></div>
+
+  <div class="leftrail">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <div class="rightrail">
+    <span class="bar"></span>
+    <s class="a"></s><s class="b"></s><s class="c"></s><s class="d"></s><s class="e"></s><s class="f"></s><s class="g2"></s><s class="h"></s>
+  </div>
+
+  <div class="safe">
+    <div class="eyebrow">盘后手记 · 2026.11.05</div>
+    <div class="rule"></div>
+    <div class="title">八成还在涨</div>
+    <div class="sub">
+      <div>昨天封板的票，116 只里 <b style="color:#D9462B">95</b> 只还在涨</div>
+      <div style="margin-top:16px;font-size:21px;color:#8B8577;letter-spacing:.05em;">上证 <b>0.10%</b><span class="gap"></span>涨停 <b>84</b> 只<span class="gap"></span>跌停 <b>0</b> 只</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <i style="height:22px"></i><i style="height:41px"></i><i style="height:13px"></i><i style="height:34px"></i><i style="height:52px"></i><i style="height:9px"></i><i style="height:38px"></i><i class="g" style="height:29px"></i><i style="height:46px"></i><i style="height:17px"></i><i style="height:33px"></i><i style="height:25px"></i><i style="height:48px"></i><i style="height:11px"></i><i style="height:36px"></i><i style="height:28px"></i><i style="height:44px"></i><i class="g" style="height:15px"></i><i style="height:50px"></i><i style="height:19px"></i><i style="height:31px"></i><i style="height:42px"></i><i style="height:24px"></i><i class="n" style="height:12px"></i><i style="height:39px"></i><i style="height:27px"></i><i style="height:47px"></i><i style="height:14px"></i><i style="height:35px"></i><i class="g" style="height:21px"></i><i style="height:45px"></i><i style="height:18px"></i><i style="height:30px"></i><i style="height:53px"></i><i style="height:10px"></i><i style="height:37px"></i><i style="height:26px"></i><i class="g" style="height:44px"></i><i style="height:16px"></i><i style="height:32px"></i><i style="height:49px"></i><i style="height:23px"></i><i style="height:40px"></i><i class="g" style="height:13px"></i><i style="height:29px"></i><i style="height:51px"></i><i style="height:20px"></i><i style="height:34px"></i><i class="g" style="height:25px"></i><i style="height:43px"></i><i style="height:12px"></i><i style="height:38px"></i><i style="height:28px"></i><i style="height:46px"></i><i style="height:17px"></i><i class="g" style="height:31px"></i><i style="height:15px"></i><i style="height:41px"></i><i style="height:24px"></i><i style="height:36px"></i>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>封面 · 实战墨绿 × L4 时间轴</title>
+<style>
+  html,body{margin:0;padding:0;}
+  body{width:1880px;height:800px;overflow:hidden;}
+  /* 三色同源：墨绿 #1F4A3C 背景/结构，暖米 #F1EADA 纸感/文字，朱红 #D9462B 点睛。绿不承载涨跌语义。 */
+  .wrap{position:relative;width:1880px;height:800px;background:#1F4A3C;overflow:hidden;
+        font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;}
+  .grid{position:absolute;inset:0;
+    background-image:linear-gradient(rgba(241,234,218,.04) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(241,234,218,.04) 1px,transparent 1px);
+    background-size:76px 76px;}
+  .vignette{position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 47%,rgba(31,74,60,0) 30%,rgba(16,40,32,.62) 100%);}
+  .frame{position:absolute;left:48px;top:48px;right:48px;bottom:48px;border:1px solid rgba(241,234,218,.18);}
+
+  /* ===== 两侧装饰（左 0–545 / 右 1335–1880）：纯几何，无文字 ===== */
+  .ticks{position:absolute;left:0;bottom:0;width:545px;height:100%;}
+  .ticks i{position:absolute;bottom:108px;width:2px;background:rgba(241,234,218,.16);}
+  .dots{position:absolute;right:0;top:0;width:545px;height:800px;
+    background-image:radial-gradient(rgba(241,234,218,.20) 3.2px,transparent 3.2px);
+    background-size:48px 48px;background-position:16px 16px;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 42%);
+            mask-image:linear-gradient(90deg,transparent 0%,#000 42%);}
+  .anchorL{position:absolute;left:118px;top:148px;width:3px;height:52px;background:#D9462B;}
+  .anchorR{position:absolute;right:118px;bottom:148px;width:3px;height:52px;background:#D9462B;}
+
+  /* ===== 中间 42% 安全区：1880×0.42≈790px，左起 (1880-790)/2=545px；1:1 裁切取 x540–1340，文字全在其内 ===== */
+  .content{position:absolute;left:545px;top:0;width:790px;height:800px;}
+  .mid{position:absolute;top:50%;width:790px;transform:translateY(-50%);text-align:center;}
+  .mark{width:66px;height:3px;background:#D9462B;margin:0 auto 44px;}
+  .main{margin:0;font-family:'Noto Serif SC','Songti SC','STSong',serif;
+        font-size:82px;line-height:1.32;font-weight:700;color:#F1EADA;letter-spacing:6px;text-indent:6px;}
+  .rule{width:88px;height:1px;background:rgba(241,234,218,.45);margin:48px auto 36px;}
+  .sub{margin:0;font-size:30px;line-height:1.6;font-weight:400;color:rgba(241,234,218,.82);letter-spacing:10px;text-indent:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid"></div>
+  <div class="vignette"></div>
+  <div class="frame"></div>
+
+  <div class="ticks">
+    <i style="left:62px;height:96px;"></i>
+    <i style="left:104px;height:158px;"></i>
+    <i style="left:146px;height:112px;"></i>
+    <i style="left:190px;height:232px;"></i>
+    <i style="left:234px;height:142px;"></i>
+    <i style="left:278px;height:196px;"></i>
+    <i style="left:322px;height:104px;"></i>
+    <i style="left:366px;height:252px;"></i>
+    <i style="left:410px;height:164px;"></i>
+    <i style="left:454px;height:124px;"></i>
+    <i style="left:498px;height:204px;"></i>
+  </div>
+  <div class="dots"></div>
+  <div class="anchorL"></div>
+  <div class="anchorR"></div>
+
+  <div class="content">
+    <div class="mid">
+      <div class="mark"></div>
+      <p class="main">我盯错了一整天</p>
+      <div class="rule"></div>
+      <p class="sub">收盘后翻到涨跌家数那页</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

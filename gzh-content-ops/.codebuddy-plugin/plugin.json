@@ -1,0 +1,46 @@
+{
+  "name": "gzh-content-ops",
+  "version": "2.0.0",
+  "description": "Private WeChat Official Account content-ops expert team: AI-persona positioning, a 7-agent pipeline (topic scouting to draft-box + video-account adaptation), 16 themes x 8 layouts, zero-credit Gemini imagery, serialized column templates, AI-taste <=20, compliance gate & review loop.",
+  "author": {
+    "name": "薄肌小王",
+    "email": ""
+  },
+  "agents": ["./agents/gzh-content-ops.md"],
+  "skills": [
+    "./skills/gzh-workflow"
+  ],
+
+  "expertType": "agent",
+  "agentName": "gzh-content-ops",
+
+  "displayName": {
+    "en": "GZH Ops Pro",
+    "zh": "公众号内容运营专家"
+  },
+  "profession": {
+    "en": "AI Persona Content Operator",
+    "zh": "AI人设号内容运营"
+  },
+  "displayDescription": {
+    "en": "Your private Official Account expert team: a 7-agent pipeline covering topic scouting, drafting, zero-credit Gemini imagery, layout, draft-box delivery and video-account scripts.",
+    "zh": "你独用的公众号内容运营专家团：7角色流水线跑选题、写稿、零积分配图、排版、草稿箱，并适配视频号。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "用今天的一个AI话题，帮我跑一篇公众号草稿（含选题、封面配图、排版候选，进草稿箱，并附视频号脚本）。",
+    "en": "Use today's AI topic to run a full Official Account draft (topic, hook, sections, punchline, covers, layout options) into the draft box, plus a video-account script."
+  },
+  "plugin": "gzh-content-ops",
+  "tags": [
+    { "en": "Official Account Ops", "zh": "公众号运营" },
+    { "en": "Layout & AI Imagery", "zh": "排版与AI生图" },
+    { "en": "Multi-Agent Workflow", "zh": "多Agent流水线" }
+  ],
+  "quickPrompts": [
+    { "en": "Use today's AI topic to run a full Official Account draft (topic, hook, sections, punchline, covers, layout options) into the draft box, plus a video-account script.", "zh": "用今天的一个AI话题，帮我跑一篇公众号草稿（含选题、封面配图、排版候选，进草稿箱，并附视频号脚本）。" },
+    { "en": "Give me 3 layout options (theme x format) for this piece before rendering, and pick the palette and format by topic.", "zh": "这篇先给我出3套排版候选（主题×版式）再渲染，按题材帮我选配色和版式。" },
+    { "en": "Run today's market recap as the 'A-Share Jianghu' serialized column, with Gemini zero-credit imagery.", "zh": "用《A股江湖每日说书》栏目，跑一篇今天的复盘，配图走Gemini零积分生图。" }
+  ]
+}

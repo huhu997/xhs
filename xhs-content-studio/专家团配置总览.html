@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小红书专家团 · 配置总览（2026-11-05 21:30）</title>
+<style>
+:root{
+  --bg:#F5F5F7; --surface:#FFFFFF; --ink:#1D1D1F; --ink2:#515154; --ink3:#86868B;
+  --line:#E5E5EA; --blue:#0071E3; --blue-soft:#EAF3FF; --orange:#FF9500; --orange-soft:#FFF4E5;
+  --green:#34C759; --green-soft:#EAF9EE; --red:#FF3B30; --red-soft:#FFEFEE; --purple:#AF52DE;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+  font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 24px 80px}
+header{margin-bottom:22px}
+h1{font-size:30px;font-weight:700;letter-spacing:-.5px;margin:0 0 6px}
+.sub{color:var(--ink3);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:20px 0 26px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+.kpi b{display:block;font-size:24px;font-weight:700;letter-spacing:-.5px}
+.kpi span{font-size:11px;color:var(--ink3)}
+.layout{display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:start}
+nav{position:sticky;top:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+nav a{display:block;color:var(--ink2);text-decoration:none;font-size:12.5px;padding:7px 9px;border-radius:8px}
+nav a:hover{background:var(--blue-soft);color:var(--blue)}
+nav .navtitle{font-size:11px;color:var(--ink3);padding:4px 9px 8px;letter-spacing:.5px}
+#q{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:12px;outline:none;margin-bottom:8px}
+#q:focus{border-color:var(--blue)}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+.block h2{font-size:18px;margin:0 0 4px;font-weight:650;letter-spacing:-.2px}
+.block .lead{color:var(--ink3);font-size:12.5px;margin:0 0 16px}
+h3{font-size:14px;margin:20px 0 8px;font-weight:650}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+th{background:#FAFAFC;color:var(--ink2);font-weight:600;text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid #F0F0F3;vertical-align:top}
+tr:last-child td{border-bottom:none}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11.5px;background:#F5F5F7;padding:1px 5px;border-radius:5px;color:#3A3A3C}
+.tag{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap}
+.t-new{background:var(--orange-soft);color:#B26A00}
+.t-ok{background:var(--green-soft);color:#1E7E34}
+.t-warn{background:var(--red-soft);color:#C22A20}
+.t-blue{background:var(--blue-soft);color:var(--blue)}
+.t-gray{background:#F0F0F3;color:var(--ink2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin-top:12px}
+.card{border:1px solid var(--line);border-radius:13px;padding:14px;background:#FDFDFE}
+.card .who{font-size:15px;font-weight:700;margin-bottom:2px}
+.card .role{font-size:11.5px;color:var(--ink3);margin-bottom:9px}
+.card ul{margin:0;padding-left:16px;font-size:11.5px;color:var(--ink2)}
+.card li{margin-bottom:3px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.flow .node{background:var(--blue-soft);color:#0058B0;border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600}
+.flow .node.state{background:var(--purple);color:#fff}
+.flow .arrow{color:var(--ink3);font-size:15px}
+.note{background:var(--orange-soft);border-left:3px solid var(--orange);border-radius:8px;padding:11px 14px;font-size:12.5px;margin:12px 0;color:#6B4A14}
+.note.blue{background:var(--blue-soft);border-color:var(--blue);color:#0B4C8C}
+.note.red{background:var(--red-soft);border-color:var(--red);color:#8C211B}
+.gate{border-left:3px solid var(--blue);padding-left:14px;margin:14px 0}
+.gate .gname{font-weight:700;font-size:13.5px}
+.gate p{margin:3px 0;font-size:12.5px;color:var(--ink2)}
+pre{background:#F7F7F9;border:1px solid var(--line);border-radius:10px;padding:13px 15px;overflow:auto;font-size:11.5px;line-height:1.6;color:#3A3A3C;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap}
+details{border:1px solid var(--line);border-radius:11px;padding:10px 14px;margin:9px 0;background:#FDFDFE}
+summary{cursor:pointer;font-weight:600;font-size:13px;color:var(--blue)}
+details pre{margin-top:10px}
+.hide{display:none!important}
+footer{color:var(--ink3);font-size:11.5px;text-align:center;margin-top:28px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}nav{position:static}.kpis{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>小红书专家团 · 配置总览</h1>
+  <div class="sub">生成时间 2026-11-05 21:30 · 依据磁盘实际文件逐份读取，非示意稿 · 本会话 Expert ID <code>ex_O2qMJkUsho3y</code>（运行时 ID，配置文件中无映射）</div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><b>2</b><span>套配置（团队 + 引擎）</span></div>
+  <div class="kpi"><b>5</b><span>团队成员</span></div>
+  <div class="kpi"><b>13</b><span>注册 skills</span></div>
+  <div class="kpi"><b>7</b><span>道 Gate</span></div>
+  <div class="kpi"><b>4</b><span>Phase 选题流</span></div>
+  <div class="kpi"><b>3</b><span>层架构 state/engine/accounts</span></div>
+</div>
+
+<div class="layout">
+<nav>
+  <div class="navtitle">目录</div>
+  <input id="q" placeholder="搜索配置…">
+  <a href="#s1">1 · 身份与两套配置</a>
+  <a href="#s2">2 · 5 位成员</a>
+  <a href="#s3">3 · 协作铁律</a>
+  <a href="#s4">4 · SOP 与 4 Phase</a>
+  <a href="#s5">5 · 7 道 Gate 全文</a>
+  <a href="#s6">6 · 三层架构与文件</a>
+  <a href="#s7">7 · 生效与校验</a>
+  <a href="#s8">8 · 账号与稿件状态</a>
+  <a href="#s9">9 · 新增条款原文</a>
+  <a href="#s10">10 · 没清干净的地方</a>
+</nav>
+
+<main>
+<!-- 1 -->
+<section class="block" id="s1" data-text="身份 两套配置 redfox xhs-content-studio team agent 版本 lead 缓存">
+  <h2>1 · 身份与两套配置的关系</h2>
+  <p class="lead">这是最容易混的一点：会话里的「专家团」和上一轮我改的「引擎包」是两个不同的包。</p>
+  <table>
+    <tr><th>项</th><th>小红书创作专家团（出稿方）</th><th>小红书内容工作室（规则方）</th></tr>
+    <tr><td>包名</td><td><code>redfox-xiaohongshu-ops-team</code></td><td><code>xhs-content-studio</code></td></tr>
+    <tr><td>类型 / 版本</td><td><span class="tag t-blue">team 多角色</span> v1.0.0</td><td><span class="tag t-gray">agent 单引擎</span> v2.0.0</td></tr>
+    <tr><td>源目录</td><td class="mono">F:/Cache/.workbuddy/plugins/marketplaces/experts/plugins/redfox-xiaohongshu-ops-team/</td><td class="mono">F:/Cache/.workbuddy/plugins/marketplaces/my-experts/plugins/xhs-content-studio/</td></tr>
+    <tr><td>运行缓存</td><td class="mono">C:/Users/admin/.workbuddy/plugins/cache/experts/redfox-xiaohongshu-ops-team/1.0.0/</td><td>无缓存，直接读 F 盘源</td></tr>
+    <tr><td>Lead</td><td><code>redfox-xhs-he</code>（贺红狐）</td><td><code>xhs-content-studio</code></td></tr>
+    <tr><td>职责</td><td>派成员真跑任务：挖灵感 / 写稿 / 诊断 / 下载</td><td>钉方向、事实、7 Gate、排版路由、测量回填</td></tr>
+    <tr><td>本轮改动</td><td><span class="tag t-new">he / sou / bi 三个 agent 定义已注入 Gate</span></td><td><span class="tag t-new">6→7 Gate + plugin.json 描述</span></td></tr>
+    <tr><td>分类 / 头像</td><td>06-ContentCreative / avatars/redfox-xhs-he.png</td><td>06-ContentCreative / avatars/expert.png</td></tr>
+  </table>
+  <div class="flow">
+    <span class="node state">state/ 事实源</span><span class="arrow">→</span>
+    <span class="node">he 读状态 + 生成 7 Gate 简卡</span><span class="arrow">→</span>
+    <span class="node">brief 下发 sou</span><span class="arrow">→</span>
+    <span class="node">brief 下发 bi</span><span class="arrow">→</span>
+    <span class="node">Phase 3 主理人验收</span><span class="arrow">→</span>
+    <span class="node">用户</span>
+  </div>
+  <div class="note blue">打通方式：规则由 <b>主理人在派单时原样写进 brief</b>，成员只看自己的 agent 定义 + brief。所以上一轮「只改引擎文档」＝成员根本不知道有 Gate，等于没改。现在两边都改了。</div>
+</section>
+
+<!-- 2 -->
+<section class="block" id="s2" data-text="成员 he sou bi zhen cai 贺红狐 搜狐川 笔狐生 诊狐康 采狐生 maxTurns skills">
+  <h2>2 · 5 位成员（逐份 agent 定义实录）</h2>
+  <p class="lead">来自 <code>plugin.json</code> 的 teamInfo + 各 <code>agents/*.md</code> frontmatter。</p>
+  <div class="cards">
+    <div class="card">
+      <div class="who">贺红狐 <span class="tag t-blue">LEAD</span></div>
+      <div class="role">redfox-xhs-he · 小红书增长操盘手 · maxTurns 180</div>
+      <ul><li>拆解目标 → 多角色编排</li><li>TeamCreate 只能由他执行</li><li>所有信息流经他中转</li><li><b>本轮新增</b>：7 Gate 简卡 + Phase 0/3 + 5 项独立验收</li><li>skills：无（纯编排）</li></ul>
+    </div>
+    <div class="card">
+      <div class="who">搜狐川</div>
+      <div class="role">redfox-xhs-sou · 内容灵感猎手 · maxTurns 50</div>
+      <ul><li>top-account / dailytop / lowtop</li><li>search / crawler / similar-account</li><li>输出灵感清单 + 趋势判断</li><li><b>本轮新增</b>：G-B 时间口径、禁高赞公式倒推、变现推进说明、骨架比对</li></ul>
+    </div>
+    <div class="card">
+      <div class="who">笔狐生 <span class="tag t-new">改动最多</span></div>
+      <div class="role">redfox-xhs-bi · 内容创作师 · maxTurns 50</div>
+      <ul><li>write / rewrite / title-score</li><li>cover / prohibited-word</li><li>笔记 + 标题评分 + 封面 + 3:4 卡</li><li><b>本轮新增</b>：G-A 双向、G-F 比骨架、G-H 出图前、正文全文回传</li></ul>
+    </div>
+    <div class="card">
+      <div class="who">诊狐康</div>
+      <div class="role">redfox-xhs-zhen · 账号诊断师 · maxTurns 50</div>
+      <ul><li>xiaohongshu-account-analyzer</li><li>七维体检 + 商业价值评估</li><li>优先级最高的 1–3 个问题</li><li>本轮未改（不参与写稿链路）</li></ul>
+    </div>
+    <div class="card">
+      <div class="who">采狐生</div>
+      <div class="role">redfox-xhs-cai · 素材下载专员 · maxTurns 50</div>
+      <ul><li>xiaohongshu-video-downloader</li><li>无水印直链 / 批量解析</li><li>逐条列原链接 → 直链</li><li>本轮未改（不参与写稿链路）</li></ul>
+    </div>
+  </div>
+  <div class="note">五人全部要求用 <code>SendMessage</code> 把完整产出回传给 <code>redfox-xhs-he</code>；调度时 Agent 工具的 <code>name</code> 与 <code>subagent_type</code> 都必须传 Agent ID（如 <code>redfox-xhs-bi</code>），禁止用中文名。</div>
+</section>
+
+<!-- 3 -->
+<section class="block" id="s3" data-text="协作铁律 TeamCreate 消息中转 严禁 代写 spawn 主理人">
+  <h2>3 · 团队协作铁律（he.md 原文规则）</h2>
+  <table>
+    <tr><th>#</th><th>必须做</th></tr>
+    <tr><td>1</td><td><b>建立团队</b>：任务开始由主理人亲自 TeamCreate，明确协作边界；<b>只能由主理人执行，严禁委派成员创建</b></td></tr>
+    <tr><td>2</td><td><b>调度成员</b>：按 SOP 阶段拉入成员、下发独立任务；专业产出不得由主理人代写</td></tr>
+    <tr><td>3</td><td><b>消息中转</b>：成员产出回传给主理人，由他汇总转交下一阶段；<b>成员之间不得直连</b></td></tr>
+    <tr><td>4</td><td><b>成员结论为准</b>：专业产出必须由对应成员输出后再采信，主理人只做编排与汇编</td></tr>
+    <tr><td>5</td><td>每阶段结束后把<b>完整产出原文</b>传给下一阶段；每完成一阶段向用户简要通报</td></tr>
+    <tr><td>6</td><td>所有输出使用与用户原始需求相同的语言</td></tr>
+  </table>
+  <h3>严禁行为（5 条）</h3>
+  <p class="mono">❌ 跳过 TeamCreate 自己模拟成员发言　❌ 代写成员的专业产出　❌ 未完成前序阶段就跳后续　❌ 成员互相直连　❌ spawn 主理人自己</p>
+  <div class="note red">D2B 翻车正对应第 1、2 条：那一版是我按 Gate 单手写的，没建团队、没派成员，所以「感觉不像专家团写的」是事实，不是错觉。</div>
+</section>
+
+<!-- 4 -->
+<section class="block" id="s4" data-text="SOP Workflow 爆款选题流 账号体检流 榜单监测日报 Phase 0 Phase 3">
+  <h2>4 · SOP 与接工作室项目时的 4 Phase</h2>
+  <h3>通用 3 条 Workflow（其他项目照旧）</h3>
+  <table>
+    <tr><th>Workflow</th><th>Phase 1</th><th>Phase 2</th></tr>
+    <tr><td>1 爆款选题流</td><td>sou 搜热门 + 扒竞品 → 灵感清单与趋势判断</td><td>bi 生成笔记（标题评分 / 违禁词 / 封面）→ 可发布内容</td></tr>
+    <tr><td>2 账号体检流</td><td>zhen 七维诊断 → 报告与问题清单</td><td>bi 依据诊断结论生成针对性笔记</td></tr>
+    <tr><td>3 榜单监测日报</td><td>sou 榜单 TOP50 + 趋势 → 灵感素材库</td><td>bi 生成可视化日报</td></tr>
+  </table>
+  <h3>接 xhs-content-studio 项目时，Workflow 1 扩为 4 Phase <span class="tag t-new">本轮新增</span></h3>
+  <table>
+    <tr><th>Phase</th><th>执行人</th><th>动作</th><th>过的闸</th></tr>
+    <tr><td>0</td><td>主理人</td><td>读 direction.md + facts.md + 7 Gate + 上一篇清单 → 生成带简卡的 brief</td><td>—</td></tr>
+    <tr><td>1</td><td>搜狐川</td><td>热门笔记 / 竞品 → 灵感清单 + 趋势判断（附变现说明、骨架比对）</td><td>G-B / G-C / G-F</td></tr>
+    <tr><td>2</td><td>笔狐生</td><td>笔记正文 + 标题 + 违禁词 + 封面（出图前先过六问）</td><td>G-A / G-F / G-H</td></tr>
+    <tr><td>3</td><td>主理人</td><td>G-H 验收 + 5 项独立验收；不通过<b>打回 Phase 2</b>，不自行改写代替成员</td><td>全部</td></tr>
+  </table>
+  <p style="font-size:12.5px;color:var(--ink2)">Phase 3 的 5 项独立验收：① 正文全文直接贴给用户 ② 自检表 ≤ 正文 1/3 ③ 叙事骨架与上一篇不同 ④ 出图前已过 G-H ⑤ 对外文案无编造体验 / 违禁词 / 导流外溢。</p>
+</section>
+
+<!-- 5 -->
+<section class="block" id="s5" data-text="7 Gate G-A G-B G-C G-D G-E G-F G-H 内容张力 六问 骨架 变现 事实核查">
+  <h2>5 · 7 道 Gate 全文（引擎规则，brief 简卡来源）</h2>
+  <p class="lead">G-A~G-F 是防错型（保证不出事）；G-H 是唯一正向质量闸（保证有人看）。全过 ≠ 好看。</p>
+
+  <div class="gate"><div class="gname">G-A 人设事实核查 <span class="tag t-new">11-05 修订</span></div>
+    <p>经验陈述须映射到 <code>state/facts.md</code>，否则改记录者 / 研究者视角。<b>修订</b>：只防编造，不等于把第一人称删光——真实资产（挖 300 篇笔记 / 1179 条评论、93 个去重 skill、CDP 抓数、投研背景）<b>每篇至少 1 处，且必须落成具体动作或场景</b>。禁的是「试了两周 / 实测有效 / 卖了多少单」，不是真实做过的动作。</p></div>
+  <div class="gate"><div class="gname">G-B 需求带时间戳</div>
+    <p>挖掘产出必须标采集日期，pipeline 可重跑，禁止把旧数字当永恒真理；无 API key 时用 <code>state/demands/</code> 历史报告并标日期，不编实时榜单 / 热搜 / 新数字。</p></div>
+  <div class="gate"><div class="gname">G-C 选题从变现路径派生 <span class="tag t-new">11-05 修订</span></div>
+    <p>先钉变现路径，选题 / 钩子 / 时段 / 形态全从它派生。<b>修订</b>：① 禁止从高赞标题公式倒推选题；定选题前先答「把谁、往哪一步变现路径推进一步」 ② 每 3 篇至少 1 篇接主变现（虚拟品 / 资料包 / 店铺），不许连续 3 篇「纯分享不卖课 + 站内扣词白送」。</p></div>
+  <div class="gate"><div class="gname">G-D 发布必回填 measurement</div>
+    <p>每篇发完按 <code>state/measurements/</code> 模板回填（前 2h 互动 / 钩子转化 / 第 3 天粉丝活跃时间 / CTR），无回填 = 开环。</p></div>
+  <div class="gate"><div class="gname">G-E 只调 verified 能力</div>
+    <p>只用已验证能力：CDP 抓数脚本 + marketing-card-render（Apple 暖色 A/B/C）+ guizang-card-render（瑞士风）+ proxy-fetch shim。一篇只用一套视觉，不混搭；不为「AI 插画感」碰 baoyu 逆向通道。</p></div>
+  <div class="gate"><div class="gname">G-F 跨篇去雷同 <span class="tag t-new">11-05 修订：骨架层</span></div>
+    <p>写稿前打开上一篇清单，逐层比：开头痛点 / 数据锚点 / 反直觉结论 / 金句 / 人设自证 / 交付物 / 钩子 / 5 图语义 / 标签。<b>最高优先级＝叙事骨架</b>：各压成一行「谁 → 遇到什么 → 我给了什么 → 怎么互动」，骨架撞即判雷同、单条即触发，不累计。允许保留赛道 / 视觉 / 站内扣词机制，但钩子话术不得换皮。</p>
+    <p><b>明确禁用骨架</b>：<code>泛痛点 → 我整理成一份 → 评论区扣【X】领 → 评论区问一句</code>（D1 / D2 v2 / D2B 三篇全中，旧表 13 层却全判 ✅）。</p></div>
+  <div class="gate" style="border-color:var(--orange)"><div class="gname">G-H 内容张力（正向质量闸） <span class="tag t-new">11-05 新增</span></div>
+    <p><b>折叠全部自检表，只读正文，出图之前逐条过六问，任一为否不出稿：</b></p>
+    <p>① 有没有一句别人写不出来的话（真实资产 / 具体数字 / 具体场景）？<br>
+       ② 开头 3 行有没有具体画面或冲突，而不是「很多人都会……」？<br>
+       ③ 删掉全部 emoji、编号、小标题后，还像人说话吗？<br>
+       ④ 有没有让人想截图 / 转给朋友的具体细节（不是「4 栏」「3 步」这种抽象结构）？<br>
+       ⑤ 钩子是不是上一篇换皮？「纯分享不卖课」是不是又原样出现？<br>
+       ⑥ 发布清单里自检表篇幅是否 &gt; 正文 3 倍（超了判本末倒置，退回）？</p>
+    <p>触发案例：D2B 清单 213 行 / 正文 18 行，六闸全 ✅，用户仍判「有点糟糕」。</p></div>
+</section>
+
+<!-- 6 -->
+<section class="block" id="s6" data-text="三层架构 state engine accounts 目录树 文件清单 排版路由 能力注册表">
+  <h2>6 · 引擎包三层架构与关键文件</h2>
+<pre>xhs-content-studio/                        # v2.0.0 · agent 型 · 唯一事实源
+├── .codebuddy-plugin/plugin.json          # 7 Gate 描述（本轮已改）
+├── agents/xhs-content-studio.md          # 引擎规则 + 7 Gate + 7 步工作流（本轮已改）
+├── README.md                             # 7 Gate 表 + 7 步出稿流（本轮已改）
+├── state/                                # 单一事实源，每次会话先读
+│   ├── direction.md                      # 主变现 + 账号状态 + §六b 质量底线（本轮已改）
+│   ├── facts.md                          # 真实事实 + 明确没做过 + 合规铁律
+│   ├── demands/                          # 带时间戳需求报告（4 份）
+│   └── measurements/README_回填模板.md
+├── engine/                               # 与账号无关，永远干净
+│   ├── 挖掘pipeline.md / 排版路由.md / 能力注册表.md
+│   └── scripts/                          # CDP 抓数 + 渲染 + proxy-fetch.cjs
+└── accounts/
+    ├── 薄肌小王/                          # 活跃账号
+    │   ├── 选题库.md / G-A核查模板.md
+    │   ├── 发布包_D1/                    # 已发
+    │   ├── 发布包_D2_指令卡/             # 第 2 篇候选
+    │   ├── 发布包_D2B_共享档案/          # ⛔ 已降级反面教材
+    │   └── 专家团配置总览.html           # 本文件
+    └── 薄肌小王_旧人设_已废/             # 仅反面教材</pre>
+  <div class="note blue">三个已验证能力：<code>CDP 抓数脚本</code>、<code>marketing-card-render</code>（Apple 暖色 A/B/C）、<code>guizang-card-render</code>（瑞士风，离线零 key）。不可用：baoyu 三件套、Auto-Redbook。</div>
+</section>
+
+<!-- 7 -->
+<section class="block" id="s7" data-text="生效 校验 源 缓存 同步 SYNCED JSON_OK 残留风险 版本升级覆盖">
+  <h2>7 · 生效状态与校验结果</h2>
+  <table>
+    <tr><th>检查项</th><th>结果</th></tr>
+    <tr><td>redfox 源 → 运行缓存（he / sou / bi）</td><td><span class="tag t-ok">3/3 SYNCED</span> <code>diff -q</code> 全部一致</td></tr>
+    <tr><td>plugin.json / marketplace.json 语法</td><td><span class="tag t-ok">JSON_OK</span> 且均含 7-gate 文案</td></tr>
+    <tr><td>缓存 he.md 的 Gate 覆盖</td><td><span class="tag t-ok">G-A B C D E F H 全 7 条</span></td></tr>
+    <tr><td>缓存 sou.md / bi.md</td><td><span class="tag t-ok">G-B/C/F</span> / <span class="tag t-ok">G-A/F/H</span></td></tr>
+    <tr><td>xhs-content-studio 运行缓存</td><td><span class="tag t-gray">不存在</span>（cache/my-experts 下只有 gzh-content-ops），直接读 F 盘源</td></tr>
+    <tr><td>当前会话是否已加载新配置</td><td><span class="tag t-warn">需重开会话 / 重扫专家</span> agent 定义通常在会话启动时载入，本轮改动对<b>下一次</b>派单生效</td></tr>
+  </table>
+  <div class="note">沿用公众号专家团踩过的坑：<b>注册脚本不刷运行缓存</b>，源目录改完必须手工 cp 到 <code>C:/Users/admin/.workbuddy/plugins/cache/...</code>，否则跑的还是旧配置。本轮已双写。</div>
+  <div class="note red">残留风险：redfox 是市场安装的包，将来版本升级可能覆盖缓存副本；源目录那份已改，届时重新 cp 一次即可恢复。另：<code>ex_O2qMJkUsho3y</code> 是运行时 ID，在 F 盘源与 C 盘缓存的 json 里均查不到映射，无法从文件反查它对应哪个包——从已加载成员列表与 plugin.json 判断为 redfox 团队。</div>
+</section>
+
+<!-- 8 -->
+<section class="block" id="s8" data-text="账号 薄肌小王 D1 D2 D2B D3 D5 方向 虚拟品 信息整理 投研 新号权重期">
+  <h2>8 · 当前账号与稿件状态</h2>
+  <table>
+    <tr><th>层</th><th>内容</th></tr>
+    <tr><td>主变现</td><td>小红书虚拟品 / AI 效率知识产品（<b>短链直接卖</b>）：选品清单、上架 SOP、合规避坑、可跑模板</td></tr>
+    <tr><td>流量入口</td><td>信息整理 / AI 知识管理内容，用「可跑模板」引流，不直接卖</td></tr>
+    <tr><td>信任背书</td><td>投研真实背景，只讲「做过投研的人怎么用 AI 整理情报」，不荐股、不编交易经历</td></tr>
+    <tr><td>活跃账号</td><td>「薄肌小王」· 小王 · 用 AI 折腾副业的真实记录者；<b>新号权重期</b>，前 30 天泛人群流量入口为主</td></tr>
+  </table>
+  <table>
+    <tr><th>稿件</th><th>状态</th><th>说明</th></tr>
+    <tr><td>D1 信息整理四步模板</td><td><span class="tag t-ok">已发</span></td><td>十几个观看；主因新号权重，配图偏冷为次因</td></tr>
+    <tr><td>D2 v2「6 张指令卡」</td><td><span class="tag t-blue">第 2 篇候选</span></td><td>纯实操工具帖，Apple 暖色，过 G-F 修订</td></tr>
+    <tr><td>D2B「一图看懂个人档案」</td><td><span class="tag t-warn">⛔ 降级反面教材</span></td><td>不发布、不作范文、不作 G-F 比对基准；5 图与资料包可复用，正文与钩子不可复用</td></tr>
+    <tr><td>D3 试水稿 / D5 文案</td><td><span class="tag t-gray">已备未发</span></td><td>新号权重期暂不上同行向变现款</td></tr>
+  </table>
+</section>
+
+<!-- 9 -->
+<section class="block" id="s9" data-text="原文 硬约束 硬闸 摘录 he sou bi 新增条款">
+  <h2>9 · 本轮新增条款原文（可展开逐字看）</h2>
+  <p class="lead">以下为写进 agent 定义的原句，不是摘要。</p>
+
+  <details><summary>he.md · 主理人第一动作与 7 Gate 简卡</summary><pre>### 主理人第一动作（不可跳过）
+1. 读 state/direction.md（方向/变现）、state/facts.md（真实事实+红线）、
+   agents/xhs-content-studio.md（7 Gate）、上一篇已定稿发布清单。
+2. 把 7 Gate 简卡原样写进每个 Phase 的 brief —— 规则必须由主理人在派单时
+   一次性下发，禁止等成员交稿后再补规则、禁止自己单手写稿代替成员。
+
+G-A 经验陈述须映射到 facts.md；每篇至少 1 处真实资产落成具体动作/场景。
+     禁的是编体验（试了两周/实测有效/卖了多少单），不是第一人称
+G-B 需求/数据必须带采集日期与口径，可重跑；无 key 就用 state/demands/
+     历史报告并标日期，不编实时数据
+G-C 定选题先答「把谁、往哪一步变现路径推进一步」；禁止从高赞标题公式
+     倒推选题；每 3 篇至少 1 篇接主变现
+G-D 发完回填 state/measurements/
+G-E 只用 verified 渲染能力（Apple 暖色 / guizang 瑞士风，一篇只一套）
+G-F 写稿前比对上一篇叙事骨架（谁→遇到什么→我给了什么→怎么互动）；
+     骨架撞即换形态，比表层论据优先
+G-H 出图前过内容张力六问：独家句 / 开头 3 行有画面 / 删 emoji 编号后
+     还像人话 / 有可截图细节 / 钩子不换皮 / 正文 ≥ 自检表 1/3</pre></details>
+
+  <details><summary>sou.md · 猎手侧 G-B / G-C / G-F</summary><pre>- G-B 时间口径：每条信号必须写采集日期与来源（实时抓取 / state/demands/
+  历史报告），区分「已验证·近期」与「过期」。无 API key 时不得编实时榜单/
+  热搜/新数字，用带日期的历史报告并明确标注。
+- G-C 禁止追壳子：不得因为某个标题公式有高赞就推荐这个选题
+  （例：「一图看懂」1.1 万赞 → 建议写「一图看懂」）。每条候选必须附一句
+  「这条把谁、往哪一步变现路径推进」，答不出 → 不进清单。
+- G-C 变现节奏：主理人若告知已连续 2 篇「纯分享不卖课」的流量入口帖，
+  本次必须给出 ≥1 条能接主变现（虚拟品 / 资料包 / 店铺）的候选。
+- G-F 前置：清单末尾附「上一篇叙事骨架」一行摘要，并标注每条候选与它
+  是否同构；同构的候选直接剔除，不要留给笔狐生去踩。
+- 选题依据里的赞数/时间只作内部判断，不得写进对外正文。</pre></details>
+
+  <details><summary>bi.md · 笔手侧 G-A / G-F / G-H 硬闸</summary><pre>- 写稿前必读两份文件：state/facts.md（可写事实 + 红线）、上一篇已定稿
+  发布清单。先把两篇正文各压成一行骨架比对（G-F）：「泛痛点 → 我整理成
+  一份 → 扣【X】领 → 评论区问一句」是禁用骨架，撞了就换形态，不要靠换
+  论据/换标题蒙混。
+- G-A 是双向的：既禁止编造体验（试了两周 / 实测有效 / 收藏夹不堆灰 /
+  效率翻 N 倍 / 卖了多少单），也禁止把第一人称删光。facts.md §一 的真实
+  资产每篇至少 1 处，且必须落成具体动作或具体画面，不能只写进核查表当摆设。
+- G-H 在出图之前：生成封面 / 3:4 卡片之前，折叠全部自检表只读正文，
+  逐条过六问。任一为否 → 重写正文，不许先渲图（前三次返工都栽在这）。
+- 钩子：站内扣词机制可保留，但话术不得逐篇换皮；结尾互动要有内容增量。
+- 回传给主理人的必须是正文全文（标题 + 正文 + 标签 + 钩子），不得只给
+  文件路径、评分表或元数据；核查表一律作附件，篇幅不得超过正文 3 倍。
+- 回传时附三行结论：G-A 用了哪 1 处真实资产 / G-F 骨架比对结果 /
+  G-H 六问逐条通过情况。</pre></details>
+</section>
+
+<!-- 10 -->
+<section class="block" id="s10" data-text="没清干净 待修 TODO README 15 skills 13 ID 映射 覆盖 D2B 文件">
+  <h2>10 · 还没清干净的地方（如实列）</h2>
+  <table>
+    <tr><th>#</th><th>问题</th><th>影响</th></tr>
+    <tr><td>1</td><td>redfox 包 <code>README.md</code> 仍是生成模板，正文全是 <code>[TODO: 一句话描述]</code>，安装路径还写着别人的机器 <code>C:\Users\NPC-268\...</code></td><td>不影响运行，但包本身不干净</td></tr>
+    <tr><td>2</td><td><code>plugin.json</code> description 写「15 core skills」，实际 <code>skills</code> 数组注册 <b>13</b> 个</td><td>数字不符，宜改成 13</td></tr>
+    <tr><td>3</td><td>本会话 Expert ID <code>ex_O2qMJkUsho3y</code> 在源与缓存的 json 里均无映射</td><td>无法从文件反查，只能按已加载成员推断为 redfox 团队</td></tr>
+    <tr><td>4</td><td>agent 定义通常在会话启动时载入，本轮改动对<b>当前会话</b>可能未生效</td><td>下次派单前重开会话 / 重扫专家最稳</td></tr>
+    <tr><td>5</td><td>redfox 市场包版本升级会覆盖运行缓存副本</td><td>源目录已改，升级后手工 cp 一次恢复</td></tr>
+    <tr><td>6</td><td>D2B 已降级但 5 张图、资料包、渲染脚本仍在目录里</td><td>可复用资产，不作范文；正文与钩子已标不可复用</td></tr>
+    <tr><td>7</td><td>redfox 的 <code>defaultInitPrompt</code> / <code>quickPrompts</code> 仍是通用美妆选题示例</td><td>与本账号方向无关，进专家中心看到的示例是旧的</td></tr>
+  </table>
+  <div class="note blue">上面第 1、2、7 条属于「包内门面」，跟出稿质量无关，但你要看「详细的」，就一并摊开。要不要一并收拾，你说一声。</div>
+</section>
+
+<footer>依据文件：redfox plugin.json + 5 份 agents/*.md（源与缓存）、xhs-content-studio plugin.json / agents / README / state、2026-11-05 工作区日志。本页为静态快照，改配置后需重新生成。</footer>
+</main>
+</div>
+</div>
+<script>
+var q=document.getElementById('q');
+q.addEventListener('input',function(){
+  var k=this.value.trim().toLowerCase();
+  document.querySelectorAll('.block').forEach(function(b){
+    var t=(b.getAttribute('data-text')||'')+' '+b.textContent;
+    b.classList.toggle('hide', k!=='' && t.toLowerCase().indexOf(k)<0);
+  });
+});
+</script>
+</body>
+</html>

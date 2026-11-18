@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:800px;height:800px;font-family:"PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,sans-serif;overflow:hidden;background:#FFFFFF}
+.wrap{width:800px;height:800px;background:#FFFFFF;color:#1D1D1F;padding:46px 42px;display:flex;flex-direction:row;gap:26px;align-items:center;position:relative;overflow:hidden}
+.wrap.no-img{flex-direction:column;align-items:stretch;justify-content:flex-start}
+.left{flex:0 0 45%;height:100%;background:#FFFFFF;border-radius:24px;padding:22px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.left img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px}
+.right{flex:1;display:flex;flex-direction:column;position:relative;z-index:1;min-width:0}
+.badge{align-self:flex-start;background:#0071E3;color:#fff;font-size:22px;font-weight:600;padding:8px 20px;border-radius:999px;position:relative}
+.title{margin-top:26px;font-size:60px;font-weight:700;line-height:1.22;letter-spacing:1px;position:relative}
+.title .o{color:#0071E3}
+.sub{margin-top:16px;font-size:26px;color:#8E8E93;font-weight:500;line-height:1.5;position:relative}
+.points{margin-top:28px;display:flex;flex-direction:column;gap:14px;position:relative}
+.pt{font-size:28px;font-weight:600;color:#1D1D1F;border-left:6px solid #0071E3;padding-left:16px;line-height:1.34}
+.foot{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;align-items:center;font-size:19px;color:#8E8E93;position:relative}
+.price{color:#0071E3;font-size:32px;font-weight:700}
+</style></head><body><div class="wrap {{HAS_IMG}}">
+{{LEFT}}
+<div class="right">
+<div class="badge">{{BADGE}}</div>
+<div class="title">{{TITLE_LINE1}}<br/><span class="o">{{TITLE_HL}}</span></div>
+<div class="sub">{{SUB}}</div>
+<div class="points">{{POINTS}}</div>
+<div class="foot"><span class="price">{{PRICE}}</span><span>{{FOOT}}</span></div>
+</div>
+</div></body></html>

@@ -1,0 +1,15 @@
+# 数据总览样图
+structure: cards
+tag: A股每日复盘 · 大盘
+title: 今日收盘全景
+subtitle: 缩量反弹，成色存疑
+items:
+  - name: 上证 3946.68
+    desc: +0.32%
+  - name: 创业板 3602.08
+    desc: +1.49%
+  - name: 科创50 1736.99
+    desc: +1.61%
+  - name: 成交 2.15万亿
+    desc: 缩量1700亿
+cta: 下滑看 · 预判验证

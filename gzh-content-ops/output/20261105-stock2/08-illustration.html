@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>08-illustration</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1600px; height:900px; overflow:hidden; background:#F4F1EA; }
+  .stage { position:relative; width:1600px; height:900px; background:#F4F1EA; overflow:hidden; }
+  .ledger { position:absolute; inset:0;
+    background-image:repeating-linear-gradient(to right, rgba(14,42,71,.04) 0 1px, transparent 1px 50px); }
+
+  .head { position:absolute; left:90px; top:82px; width:1420px; }
+  .eyebrow { font-family:'Noto Sans SC','Microsoft YaHei',sans-serif; font-size:18px; font-weight:600;
+    letter-spacing:.32em; color:#C8A24B; }
+  .title { font-family:'Noto Serif SC','Songti SC',serif; font-size:48px; font-weight:900;
+    color:#0E2A47; letter-spacing:.02em; margin-top:16px; line-height:1.1; }
+  .kicker { position:absolute; right:90px; top:86px; text-align:right;
+    font-family:'Noto Sans SC',sans-serif; font-size:17px; color:#8B8577; letter-spacing:.08em; line-height:1.7; }
+  .hr { position:absolute; left:90px; top:214px; width:1420px; height:1px; background:rgba(14,42,71,.22); }
+  .hr2 { position:absolute; left:90px; top:216px; width:220px; height:2px; background:#C8A24B; }
+
+  .panel { position:absolute; top:262px; width:640px; }
+  .p-left { left:90px; }
+  .p-right { left:860px; }
+
+  .phead { display:flex; align-items:baseline; }
+  .dot { display:inline-block; width:12px; height:12px; margin-right:12px; }
+  .pname { font-family:'Noto Sans SC',sans-serif; font-size:27px; font-weight:700; letter-spacing:.06em; }
+  .pnote { font-family:'Noto Sans SC',sans-serif; font-size:17px; color:#8B8577; margin-left:14px; letter-spacing:.06em; }
+  .green { color:#2E7D5B; }
+  .red { color:#D9462B; }
+
+  .row { margin-top:34px; }
+  .line { display:flex; justify-content:space-between; align-items:baseline; }
+  .nm { font-family:'Noto Sans SC',sans-serif; font-size:21px; color:#2C3138; letter-spacing:.04em; }
+  .vl { font-family:'Helvetica Neue',Arial,sans-serif; font-size:23px; font-weight:700; letter-spacing:.01em; }
+  .track { margin-top:9px; width:622px; height:11px; background:rgba(14,42,71,.07); }
+  .fill { height:11px; }
+
+  .mid { position:absolute; left:795px; top:262px; width:10px; text-align:center; }
+  .mid .t { font-family:'Noto Sans SC',sans-serif; font-size:17px; color:#0E2A47; letter-spacing:.14em; }
+  .mid .bar { margin:0 auto; width:1px; height:528px; background:rgba(14,42,71,.16); }
+  
+  .foot { position:absolute; left:90px; top:812px; width:1420px; }
+  .foot .l { font-family:'Noto Sans SC',sans-serif; font-size:16px; color:#8B8577; letter-spacing:.06em; }
+  .foot .r { position:absolute; right:0; top:-8px; font-family:'Noto Serif SC','Songti SC',serif;
+    font-size:24px; font-weight:700; color:#0E2A47; letter-spacing:.04em; }
+  .foot .r em { font-style:normal; color:#D9462B; }
+  .rulef { position:absolute; left:90px; top:790px; width:1420px; height:1px; background:rgba(14,42,71,.18); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="ledger"></div>
+
+  <div class="head">
+    <div class="eyebrow">盘后读数 · 2026-11-05</div>
+    <div class="title">跌的是防守，涨的是进攻</div>
+  </div>
+  <div class="kicker">同一比例尺<br>行业 / 概念指数口径</div>
+
+  <div class="hr"></div>
+  <div class="hr2"></div>
+
+  <!-- 左：防守端 -->
+  <div class="panel p-left">
+    <div class="phead">
+      <span class="dot" style="background:#2E7D5B"></span>
+      <span class="pname green">防守端 · 在跌</span>
+      <span class="pnote">权重、红利</span>
+    </div>
+
+    <div class="row">
+      <div class="line"><span class="nm">动力煤</span><span class="vl green">−2.20%</span></div>
+      <div class="track"><div class="fill" style="width:137px;background:#2E7D5B"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">煤炭开采</span><span class="vl green">−1.97%</span></div>
+      <div class="track"><div class="fill" style="width:123px;background:#2E7D5B;opacity:.92"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">油气开采</span><span class="vl green">−1.92%</span></div>
+      <div class="track"><div class="fill" style="width:120px;background:#2E7D5B;opacity:.84"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">电信运营商</span><span class="vl green">−1.81%</span></div>
+      <div class="track"><div class="fill" style="width:113px;background:#2E7D5B;opacity:.76"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">股份制银行</span><span class="vl green">−0.84%</span></div>
+      <div class="track"><div class="fill" style="width:52px;background:#2E7D5B;opacity:.68"></div></div>
+    </div>
+  </div>
+
+  <!-- 中：中性分隔（不表达流向，只标示两栏同属一天） -->
+  <div class="mid">
+    <div class="bar"></div>
+  </div>
+
+  <!-- 右：进攻端 -->
+  <div class="panel p-right">
+    <div class="phead">
+      <span class="dot" style="background:#D9462B"></span>
+      <span class="pname red">进攻端 · 在涨</span>
+      <span class="pnote">光伏、AI</span>
+    </div>
+
+    <div class="row">
+      <div class="line"><span class="nm">光伏辅材</span><span class="vl red">+9.94%</span></div>
+      <div class="track"><div class="fill" style="width:622px;background:#D9462B"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">光伏加工设备</span><span class="vl red">+9.58%</span></div>
+      <div class="track"><div class="fill" style="width:600px;background:#D9462B;opacity:.92"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">光伏电池组件</span><span class="vl red">+8.83%</span></div>
+      <div class="track"><div class="fill" style="width:553px;background:#D9462B;opacity:.84"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">光伏设备</span><span class="vl red">+8.45%</span></div>
+      <div class="track"><div class="fill" style="width:529px;background:#D9462B;opacity:.76"></div></div>
+    </div>
+    <div class="row">
+      <div class="line"><span class="nm">Kimi 概念</span><span class="vl red">+6.55%</span></div>
+      <div class="track"><div class="fill" style="width:410px;background:#D9462B;opacity:.68"></div></div>
+    </div>
+  </div>
+
+  <div class="rulef"></div>
+  <div class="foot">
+    <div class="l">数据：2026-11-05 收盘，概念 / 行业指数口径；条形长度按同一比例尺</div>
+    <div class="r">上证 <em>+0.10%</em>，是两股力量抵消后的零头</div>
+  </div>
+</div>
+</body>
+</html>
